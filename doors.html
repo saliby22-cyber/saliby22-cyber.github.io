@@ -74,6 +74,18 @@
             margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
+        /* تحسين للجوّال */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 10px;
+            }
+            .gallery img {
+                max-height: 220px;
+            }
+            header h1 {
+                font-size: 1.4em;
+            }
     </style>
 </head>
 <body>
