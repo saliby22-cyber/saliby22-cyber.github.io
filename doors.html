@@ -74,41 +74,39 @@
             margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-       .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 14px;
-    margin: 25px 0;
-}
+      <style>
+    /* ... باقي الأنماط ... */
 
-/* على الجوال (عرض < 576px): نجعل كل صورة تأخذ كامل العرض */
-@media (max-width: 576px) {
     .gallery {
-        grid-template-columns: 1fr; /* عمود واحد */
-        gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin: 25px 0;
     }
+
+    /* الإعداد الافتراضي (للكمبيوتر) */
     .gallery img {
         width: 100%;
-        max-height: 300px;
-        object-fit: contain;
+        height: 280px; /* ارتفاع ثابت */
+        object-fit: cover; /* يملأ المساحة دون تشويه كبير */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
     }
-}
 
-/* على الشاشات المتوسطة (مثل iPad) */
-@media (min-width: 577px) and (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
+    /* على الجوال: نعيد الضبط ليكون طوليًا */
+    @media (max-width: 768px) {
+        .gallery img {
+            height: auto;       /* لا ارتفاع ثابت */
+            max-height: 320px;  /* حد أقصى لتجنب التطويل الزائد */
+            object-fit: contain; /* يعرض الصورة كاملة */
+        }
     }
-}
 
-/* على الشاشات الكبيرة */
-@media (min-width: 769px) {
-    .gallery {
-        grid-template-columns: repeat(3, 1fr); /* أو 4 إذا أردت */
+    .gallery img:hover {
+        transform: scale(1.02);
     }
-}
-            }
-    </style>
+</style>
 </head>
 <body>
 
