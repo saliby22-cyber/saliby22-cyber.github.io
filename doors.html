@@ -74,17 +74,39 @@
             margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        /* تحسين للجوّال */
-        @media (max-width: 768px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-                gap: 10px;
-            }
-            .gallery img {
-                max-height: 220px;
-            }
-            header h1 {
-                font-size: 1.4em;
+       .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin: 25px 0;
+}
+
+/* على الجوال (عرض < 576px): نجعل كل صورة تأخذ كامل العرض */
+@media (max-width: 576px) {
+    .gallery {
+        grid-template-columns: 1fr; /* عمود واحد */
+        gap: 12px;
+    }
+    .gallery img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+    }
+}
+
+/* على الشاشات المتوسطة (مثل iPad) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* على الشاشات الكبيرة */
+@media (min-width: 769px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* أو 4 إذا أردت */
+    }
+}
             }
     </style>
 </head>
