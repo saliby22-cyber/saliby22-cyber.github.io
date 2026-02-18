@@ -14,7 +14,7 @@
             color: #333;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -46,6 +46,32 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             margin-top: 20px;
         }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 25px 0;
+        }
+        /* الإعداد الافتراضي (للكمبيوتر) */
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        /* على الجوال: نعيد الضبط ليكون طوليًا */
+        @media (max-width: 768px) {
+            .gallery img {
+                height: auto;
+                max-height: 320px;
+                object-fit: contain;
+            }
+        }
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
         .whatsapp-btn {
             display: inline-block;
             background: #25D366;
@@ -73,9 +99,12 @@
     </header>
 
     <div class="container">
-        <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/door.jpg" 
-             alt="بوابة فاخرة" class="main-image">
 
+        <!-- الصورة الرئيسية -->
+        <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/door.jpg" 
+             alt="بوابة فاخرة رئيسية" class="main-image">
+
+        <!-- الشرح -->
         <div class="description">
             <h2 style="color: #b00; margin-top: 0;">لماذا تختار بواباتنا؟</h2>
             <p>
@@ -93,6 +122,22 @@
                 💬 اطلب عرض سعر الآن
             </a>
         </div>
+
+        <!-- معرض الصور الإضافية (8 صور) -->
+        <h3 style="color: #b00; text-align: center; margin: 30px 0 15px 0;">أعمالنا من بوابات فاخرة</h3>
+        <div class="gallery">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates1.jpg" alt="بوابة 1">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates2.jpg" alt="بوابة 2">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates3.jpg" alt="بوابة 3">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates4.jpg" alt="بوابة 4">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates5.jpg" alt="بوابة 5">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates6.jpg" alt="بوابة 6">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates7.jpg" alt="بوابة 7">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates8.jpg" alt="بوابة 8">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates9.jpg" alt="بوابة 8">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/gates10.jpg" alt="بوابة 8">
+        </div>
+
     </div>
 
 </body>
