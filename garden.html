@@ -14,7 +14,7 @@
             color: #333;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -46,6 +46,30 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             margin-top: 20px;
         }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 25px 0;
+        }
+        /* إعداد مثالي للصور الأفقية */
+        .gallery img {
+            width: 100%;
+            height: auto;
+            max-height: 180px; /* يحافظ على التناسق دون تشويه */
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        @media (min-width: 769px) {
+            .gallery img {
+                max-height: 200px;
+            }
+        }
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
         .whatsapp-btn {
             display: inline-block;
             background: #25D366;
@@ -73,8 +97,12 @@
     </header>
 
     <div class="container">
-       <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden-furniture.jpg" 
-     alt="مفروشات حدائق" class="main-image">
+
+        <!-- الصورة الرئيسية -->
+        <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/thumb_garden.jpg" 
+             alt="مفروشات حدائق رئيسية" class="main-image">
+
+        <!-- الشرح -->
         <div class="description">
             <h2 style="color: #b00; margin-top: 0;">لماذا تختار مفروشاتنا؟</h2>
             <p>
@@ -91,6 +119,22 @@
                 💬 اطلب عرض سعر الآن
             </a>
         </div>
+
+        <!-- معرض الصور الإضافية (10 صور) -->
+        <h3 style="color: #b00; text-align: center; margin: 30px 0 15px 0;">أعمالنا من مفروشات الحدائق</h3>
+        <div class="gallery">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden1.jpg" alt="حدائق 1">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden2.jpg" alt="حدائق 2">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden3.jpg" alt="حدائق 3">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden4.jpg" alt="حدائق 4">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden5.jpg" alt="حدائق 5">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden6.jpg" alt="حدائق 6">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden7.jpg" alt="حدائق 7">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden8.jpg" alt="حدائق 8">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden9.jpg" alt="حدائق 9">
+            <img src="https://raw.githubusercontent.com/saliby22-cyber/saliby22-cyber.github.io/main/garden10.jpg" alt="حدائق 10">
+        </div>
+
     </div>
 
 </body>
