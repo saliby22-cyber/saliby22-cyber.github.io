@@ -220,6 +220,79 @@
 
     </div>
 </div>
+        <!-- حاسبة المقاطع الهندسية الشاملة - مؤسسة محمد خالد -->
+<section id="steel-weight-calc" style="background-color: #1a1a1a; color: #fff; padding: 50px 15px; direction: rtl; font-family: sans-serif;">
+    <div style="max-width: 800px; margin: 0 auto; background: #222; padding: 30px; border-radius: 15px; border: 2px solid #d4af37; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        
+        <h2 style="color: #d4af37; text-align: center; margin-bottom: 20px;">🏗️ حاسبة أوزان المقاطع الإنشائية</h2>
+        <p style="text-align: center; color: #ccc; margin-bottom: 30px;">اختر نوع المقطع وأدخل القياسات للحصول على الوزن الدقيق بالكيلو غرام</p>
+
+        <!-- اختيار نوع المقطع -->
+        <label>نوع مقطع الحديد:</label>
+        <select id="steel_shape" onchange="toggleInputs()" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #d4af37; background: #333; color: #fff;">
+            <option value="tube">تيوب مربع / مستطيل (Tube)</option>
+            <option value="sheet">ألواح صاج (Sheet/Plate)</option>
+            <option value="solid_square">حديد مربع صب (Solid Square)</option>
+            <option value="i_beam">جسر H أو I (Beam)</option>
+            <option value="u_channel">مجاري U (Channel)</option>
+        </select>
+
+        <!-- مدخلات متغيرة -->
+        <div id="inputs_container" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div id="dim_a_div"><label id="label_a">العرض (ملم):</label><input type="number" id="dim_a" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px;"></div>
+            <div id="dim_b_div"><label id="label_b">الارتفاع (ملم):</label><input type="number" id="dim_b" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px;"></div>
+            <div id="dim_t_div"><label>السماكة (ملم):</label><input type="number" id="dim_t" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px;"></div>
+            <div id="dim_l_div"><label>الطول الكلي (متر):</label><input type="number" id="dim_l" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px;"></div>
+        </div>
+
+        <button onclick="calcSteelWeight()" style="width: 100%; padding: 15px; margin-top: 25px; background: #d4af37; color: #1a1a1a; border: none; border-radius: 8px; font-size: 1.2rem; cursor: pointer; font-weight: bold;">احسب الوزن الفني</button>
+
+        <div id="steel_res_box" style="display: none; margin-top: 25px; padding: 20px; background: #333; border-radius: 10px; text-align: center; border: 1px dashed #d4af37;">
+            <h3 style="margin: 0; color: #fff;">الوزن الإجمالي: <span id="steel_weight_val" style="color: #d4af37; font-size: 1.8rem;">0</span> كغ</h3>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleInputs() {
+    let shape = document.getElementById('steel_shape').value;
+    document.getElementById('dim_b_div').style.display = (shape === 'solid_square') ? 'none' : 'block';
+    if (shape === 'sheet') {
+        document.getElementById('label_a').innerText = "العرض (متر):";
+        document.getElementById('label_b').innerText = "الطول (متر):";
+    } else {
+        document.getElementById('label_a').innerText = "العرض (ملم):";
+        document.getElementById('label_b').innerText = "الارتفاع (ملم):";
+    }
+}
+
+function calcSteelWeight() {
+    let shape = document.getElementById('steel_shape').value;
+    let a = parseFloat(document.getElementById('dim_a').value);
+    let b = parseFloat(document.getElementById('dim_b').value) || 0;
+    let t = parseFloat(document.getElementById('dim_t').value);
+    let l = parseFloat(document.getElementById('dim_l').value);
+    let weight = 0;
+
+    if (shape === 'tube') {
+        // حلقة التيوب: المحيط * السماكة * الطول * الكثافة
+        weight = ((a + b) * 2 / 1000) * t * l * 7.85;
+    } else if (shape === 'sheet') {
+        // صاج: مساحة * سماكة * كثافة
+        weight = a * b * t * 7.85;
+    } else if (shape === 'solid_square') {
+        // مربع صب
+        weight = (a * a / 1000000) * l * 7850;
+    } else if (shape === 'i_beam' || shape === 'u_channel') {
+        // تقريبي للجسور والمجاري (البطن + الجناحين)
+        weight = ((a + 2*b) / 1000) * t * l * 7.85;
+    }
+
+    document.getElementById('steel_weight_val').innerText = weight.toFixed(2);
+    document.getElementById('steel_res_box').style.display = 'block';
+}
+</script>
+
       <!-- حاسبة الأوزان الهندسية - مؤسسة محمد خالد -->
 <section id="iron-calculator" style="background-color: #f4f4f4; padding: 40px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
     <div style="max-width: 700px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border-top: 5px solid #d4af37;">
