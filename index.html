@@ -220,6 +220,72 @@
 
     </div>
 </div>
+        <!-- حاسبة الأوزان التفاعلية لمؤسسة محمد خالد -->
+<section id="iron-calculator" style="background-color: #f4f4f4; padding: 40px 15px; direction: rtl; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div style="max-width: 700px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border-top: 5px solid #d4af37;">
+        
+        <h2 style="color: #d4af37; text-align: center; font-size: 1.8rem;">🧮 حاسبة أوزان الحديد الهندسية</h2>
+        <p style="text-align: center; color: #555;">احسب وزن مشروعك التقديري وتواصل معنا للحصول على عرض سعر دقيق.</p>
+
+        <div style="margin-top: 20px;">
+            <label>نوع المشروع:</label>
+            <select id="proj_type" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;">
+                <option value="1.2" data-name="أبواب وشبكات">أبواب وشبكات حماية (خفيف)</option>
+                <option value="1.5" data-name="أبواب فلل">أبواب خارجية وفلل (متوسط)</option>
+                <option value="2.5" data-name="درج حلزوني">أدراج حلزونية ولف (ثقيل)</option>
+                <option value="1.8" data-name="هناجر">هناجر ومستودعات (هيكل)</option>
+                <option value="1.0" data-name="سقف LGS">سقف بنظام LGS (صاج)</option>
+            </select>
+
+            <label>المساحة الإجمالية (م²):</label>
+            <input type="number" id="proj_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;">
+
+            <label>السماكة (مم):</label>
+            <input type="number" id="proj_thick" placeholder="مثلاً: 2" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;">
+        </div>
+
+        <button onclick="calculateAndShow()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold; margin-top: 15px;">احسب الوزن التقديري</button>
+
+        <!-- صندوق النتيجة والواتساب -->
+        <div id="result-area" style="display: none; margin-top: 25px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fffcf2;">
+            <h3 style="color: #1a1a1a; margin-bottom: 10px;">الوزن الناتج: <span id="final-weight" style="color: #d4af37; font-size: 1.5rem;">0</span> كغ</h3>
+            
+            <a id="whatsapp-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px;">
+                💬 اطلب عرض سعر لهذا الوزن
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+function calculateAndShow() {
+    // 1. جلب البيانات
+    const area = document.getElementById('proj_area').value;
+    const thick = document.getElementById('proj_thick').value;
+    const typeSelect = document.getElementById('proj_type');
+    const factor = typeSelect.value;
+    const typeName = typeSelect.options[typeSelect.selectedIndex].getAttribute('data-name');
+
+    if(area > 0 && thick > 0) {
+        // 2. المعادلة الرياضية
+        let weight = Math.round(area * thick * 7.85 * factor);
+        
+        // 3. إظهار النتيجة
+        document.getElementById('final-weight').innerText = weight;
+        document.getElementById('result-area').style.display = 'block';
+
+        // 4. تجهيز رابط الواتساب (ضع رقمك مكان 9639XXXXXXXX)
+        const myPhone = "9639XXXXXXXX"; 
+        const message = `أهلاً مؤسسة محمد خالد، قمت بحساب وزن مشروعي عبر الموقع. النوع: ${typeName}، المساحة: ${area}م²، السماكة: ${thick}مم. الوزن التقديري الناتج: ${weight} كغ. أريد عرض سعر لو سمحت.`;
+        const encodedMessage = encodeURIComponent(message);
+        
+        document.getElementById('whatsapp-link').href = `https://wa.me{myPhone}?text=${encodedMessage}`;
+    } else {
+        alert("يرجى ملء كافة الحقول بشكل صحيح.");
+    }
+}
+</script>
+
 
    <div class="section">
     <h2 style="text-align: center; color: #b00; font-weight: 700; margin-bottom: 35px; font-size: 1.8em;">أعمالنا</h2>
