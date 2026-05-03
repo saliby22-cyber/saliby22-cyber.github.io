@@ -220,6 +220,76 @@
 
     </div>
 </div>
+        <!-- حاسبة المقاطع التجارية - مؤسسة محمد خالد -->
+<section id="commercial-steel-calc" style="background-color: #f9f9f9; color: #333; padding: 50px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
+    <div style="max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 15px; border: 2px solid #d4af37; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+        
+        <h2 style="color: #d4af37; text-align: center; margin-bottom: 10px;">📏 حاسبة المقاطع التجارية</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">حساب أوزان التيوبات، الصاج، الحديد المربع والمبسط بدقة مليمترية</p>
+
+        <div style="margin-bottom: 25px;">
+            <label style="font-weight: bold;">نوع المقطع - Section Type:</label>
+            <select id="comm_type" onchange="updateCommInputs()" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <option value="tube">تيوب (مربع / مستطيل) - Steel Tube</option>
+                <option value="sheet">ألواح صاج - Steel Sheets</option>
+                <option value="flat">حديد مبسط - Flat Bar</option>
+                <option value="solid">حديد مربع صب - Solid Square</option>
+            </select>
+        </div>
+
+        <div id="comm_inputs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <!-- يتم ملؤها عبر السكريبت -->
+        </div>
+
+        <button onclick="calcCommWeight()" style="width: 100%; padding: 15px; margin-top: 25px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.2rem; cursor: pointer; font-weight: bold;">احسب الوزن الفعلي</button>
+
+        <div id="comm_res" style="display: none; margin-top: 25px; padding: 25px; background: #fffcf2; border-radius: 12px; text-align: center; border: 2px dashed #d4af37;">
+            <h3 style="margin: 0; color: #1a1a1a;">الوزن الناتج:</h3>
+            <div style="margin-top: 10px;"><span id="comm_val" style="color: #d4af37; font-size: 2.5rem; font-weight: bold;">0</span> <small>كغ (kg)</small></div>
+        </div>
+    </div>
+</section>
+
+<script>
+const commConfig = {
+    tube: { fields: [['a','العرض (ملم)'], ['b','الارتفاع (ملم)'], ['t','السماكة (ملم)'], ['l','الطول (متر)']] },
+    sheet: { fields: [['a','العرض (متر)'], ['b','الطول (متر)'], ['t','السماكة (ملم)']] },
+    flat: { fields: [['a','العرض (ملم)'], ['t','السماكة (ملم)'], ['l','الطول (متر)']] },
+    solid: { fields: [['a','الضلع (ملم)'], ['l','الطول (متر)']] }
+};
+
+function updateCommInputs() {
+    const type = document.getElementById('comm_type').value;
+    const container = document.getElementById('comm_inputs');
+    container.innerHTML = "";
+    commConfig[type].fields.forEach(f => {
+        container.innerHTML += `<div><label style="font-size:0.9rem;">${f[1]}:</label>
+        <input type="number" id="c_${f[0]}" style="width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;"></div>`;
+    });
+}
+
+function calcCommWeight() {
+    const type = document.getElementById('comm_type').value;
+    const getV = (id) => parseFloat(document.getElementById('c_'+id)?.value || 0);
+    let weight = 0;
+    const rho = 7.85;
+
+    if (type === 'tube') {
+        weight = ((getV('a') + getV('b')) * 2 / 1000) * getV('t') * getV('l') * rho;
+    } else if (type === 'sheet') {
+        weight = getV('a') * getV('b') * getV('t') * rho;
+    } else if (type === 'flat') {
+        weight = (getV('a') / 1000) * (getV('t') / 1000) * getV('l') * 7850;
+    } else if (type === 'solid') {
+        weight = Math.pow(getV('a') / 1000, 2) * getV('l') * 7850;
+    }
+
+    document.getElementById('comm_val').innerText = weight.toFixed(2);
+    document.getElementById('comm_res').style.display = 'block';
+}
+updateCommInputs();
+</script>
+
     <!-- حاسبة الأوزان القياسية - مؤسسة محمد خالد -->
 <section id="standard-calc" style="background-color: #1a1a1a; color: #fff; padding: 40px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
     <div style="max-width: 750px; margin: 0 auto; background: #222; padding: 30px; border-radius: 15px; border: 2px solid #d4af37;">
