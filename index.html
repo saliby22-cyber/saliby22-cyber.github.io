@@ -220,72 +220,72 @@
 
     </div>
 </div>
-        <!-- حاسبة الأوزان التفاعلية لمؤسسة محمد خالد -->
-<section id="iron-calculator" style="background-color: #f4f4f4; padding: 40px 15px; direction: rtl; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      <!-- حاسبة الأوزان الهندسية - مؤسسة محمد خالد -->
+<section id="iron-calculator" style="background-color: #f4f4f4; padding: 40px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
     <div style="max-width: 700px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border-top: 5px solid #d4af37;">
         
-        <h2 style="color: #d4af37; text-align: center; font-size: 1.8rem;">🧮 حاسبة أوزان الحديد الهندسية</h2>
-        <p style="text-align: center; color: #555;">احسب وزن مشروعك التقديري وتواصل معنا للحصول على عرض سعر دقيق.</p>
+        <h2 style="color: #d4af37; text-align: center; margin-bottom: 15px;">🧮 حاسبة الأوزان التقديرية (بناءً على خبرتنا)</h2>
+        <p style="text-align: center; color: #555; margin-bottom: 25px;">أدخل مساحة مشروعك للحصول على وزن الحديد الفعلي المطلوب للتصنيع المتين.</p>
 
         <div style="margin-top: 20px;">
-            <label>نوع المشروع:</label>
-            <select id="proj_type" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;">
-                <option value="1.2" data-name="أبواب وشبكات">أبواب وشبكات حماية (خفيف)</option>
-                <option value="1.5" data-name="أبواب فلل">أبواب خارجية وفلل (متوسط)</option>
-                <option value="2.5" data-name="درج حلزوني">أدراج حلزونية ولف (ثقيل)</option>
-                <option value="1.8" data-name="هناجر">هناجر ومستودعات (هيكل)</option>
-                <option value="1.0" data-name="سقف LGS">سقف بنظام LGS (صاج)</option>
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">نوع العمل (المواصفة):</label>
+            <select id="work_type" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                <!-- الحساب مبني على وزن المتر المربع الجاهز حسب خبرتك -->
+                <option value="45" data-name="أبواب حماية/شقق">أبواب شقق وحماية متوسطة (45 كغ/م²)</option>
+                <option value="85" data-name="أبواب فلل/بوابات">أبواب خارجية وفلل ثقيلة (85 كغ/م²)</option>
+                <option value="120" data-name="درج حلزوني/لف">أدراج حلزونية وفنية لف (120 كغ/م²)</option>
+                <option value="40" data-name="هناجر ومستودعات">هناجر ومستودعات صناعية (40 كغ/م²)</option>
+                <option value="15" data-name="قرميد وسواتر">هياكل قرميد وسواتر (15 كغ/م²)</option>
+                <option value="25" data-name="كرفانات LGS">هياكل كرفانات LGS حديثة (25 كغ/م²)</option>
             </select>
 
-            <label>المساحة الإجمالية (م²):</label>
-            <input type="number" id="proj_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;">
-
-            <label>السماكة (مم):</label>
-            <input type="number" id="proj_thick" placeholder="مثلاً: 2" style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px;">
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">المساحة الإجمالية للمشروع (م²):</label>
+            <input type="number" id="work_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
         </div>
 
-        <button onclick="calculateAndShow()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold; margin-top: 15px;">احسب الوزن التقديري</button>
+        <button onclick="calculateExpertWeight()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold; margin-top: 20px; transition: 0.3s;">احسب الوزن الكلي للمشروع</button>
 
         <!-- صندوق النتيجة والواتساب -->
-        <div id="result-area" style="display: none; margin-top: 25px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fffcf2;">
-            <h3 style="color: #1a1a1a; margin-bottom: 10px;">الوزن الناتج: <span id="final-weight" style="color: #d4af37; font-size: 1.5rem;">0</span> كغ</h3>
+        <div id="expert-result" style="display: none; margin-top: 25px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fffcf2;">
+            <h3 style="color: #1a1a1a; margin-bottom: 10px;">الوزن الإجمالي التقديري: <span id="final-weight-val" style="color: #d4af37; font-size: 1.8rem;">0</span> كغ</h3>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">*هذا الوزن يشمل الهيكل الأساسي والتقويات الفنية لضمان أعلى مستويات الأمان.</p>
             
-            <a id="whatsapp-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px;">
-                💬 اطلب عرض سعر لهذا الوزن
+            <a id="wa-expert-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);">
+                💬 اطلب عرض سعر لهذا الوزن (واتساب)
             </a>
         </div>
     </div>
 </section>
 
 <script>
-function calculateAndShow() {
-    // 1. جلب البيانات
-    const area = document.getElementById('proj_area').value;
-    const thick = document.getElementById('proj_thick').value;
-    const typeSelect = document.getElementById('proj_type');
-    const factor = typeSelect.value;
+function calculateExpertWeight() {
+    const area = document.getElementById('work_area').value;
+    const typeSelect = document.getElementById('work_type');
+    const weightPerMeter = typeSelect.value;
     const typeName = typeSelect.options[typeSelect.selectedIndex].getAttribute('data-name');
 
-    if(area > 0 && thick > 0) {
-        // 2. المعادلة الرياضية
-        let weight = Math.round(area * thick * 7.85 * factor);
+    if(area > 0) {
+        // حساب الوزن الإجمالي بناءً على معايير مؤسسة محمد خالد
+        let totalWeight = Math.round(area * weightPerMeter);
         
-        // 3. إظهار النتيجة
-        document.getElementById('final-weight').innerText = weight;
-        document.getElementById('result-area').style.display = 'block';
+        document.getElementById('final-weight-val').innerText = totalWeight;
+        document.getElementById('expert-result').style.display = 'block';
 
-        // 4. تجهيز رابط الواتساب (ضع رقمك مكان 9639XXXXXXXX)
-        const myPhone = "9639XXXXXXXX"; 
-        const message = `أهلاً مؤسسة محمد خالد، قمت بحساب وزن مشروعي عبر الموقع. النوع: ${typeName}، المساحة: ${area}م²، السماكة: ${thick}مم. الوزن التقديري الناتج: ${weight} كغ. أريد عرض سعر لو سمحت.`;
+        // رقم هاتفك مع مفتاح الدولة لسوريا 963
+        const myPhone = "963945509412"; 
+        const message = `أهلاً مؤسسة محمد خالد للحدادة. قمت بحساب وزني التقديري عبر الموقع. النوع: ${typeName}، المساحة: ${area}م². الوزن الناتج: ${totalWeight} كغ. يرجى تزويدي بعرض سعر وتفاصيل إضافية.`;
         const encodedMessage = encodeURIComponent(message);
         
-        document.getElementById('whatsapp-link').href = `https://wa.me{myPhone}?text=${encodedMessage}`;
+        // ربط الزر بالرسالة ورقم الهاتف
+        document.getElementById('wa-expert-link').href = `https://wa.me{myPhone}?text=${encodedMessage}`;
+        
+        // تمرير الصفحة لأسفل لرؤية النتيجة
+        window.scrollTo({ top: document.getElementById('expert-result').offsetTop + 200, behavior: 'smooth' });
     } else {
-        alert("يرجى ملء كافة الحقول بشكل صحيح.");
+        alert("يرجى إدخال مساحة المشروع أولاً.");
     }
 }
 </script>
-
 
    <div class="section">
     <h2 style="text-align: center; color: #b00; font-weight: 700; margin-bottom: 35px; font-size: 1.8em;">أعمالنا</h2>
