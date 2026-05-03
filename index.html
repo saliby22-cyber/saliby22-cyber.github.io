@@ -274,7 +274,7 @@ function calculateExpertWeight() {
         const message = `أهلاً مؤسسة محمد خالد. قمت بحساب وزني التقديري عبر الموقع.\nالنوع: ${typeName}\nالمساحة: ${area}م²\nالوزن الناتج: ${totalWeight} كغ.\nأرجو تزويدي بعرض السعر.`;
         const encodedMessage = encodeURIComponent(message);
         
-        document.getElementById('wa-expert-link').href = `https://wa.me{myPhone}?text=${encodedMessage}`;
+    document.getElementById('wa-expert-link').href = "https://whatsapp.com" + myPhone + "&text=" + encodedMessage;
     } else {
         alert("يرجى إدخال مساحة المشروع.");
     }
