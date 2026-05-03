@@ -220,94 +220,69 @@
 
     </div>
 </div>
-     <!-- حاسبة المقاطع الهندسية الشاملة - مؤسسة محمد خالد -->
-<section id="universal-steel-calc" style="background-color: #1a1a1a; color: #fff; padding: 50px 15px; direction: rtl; font-family: sans-serif;">
-    <div style="max-width: 850px; margin: 0 auto; background: #222; padding: 30px; border-radius: 15px; border: 2px solid #d4af37; box-shadow: 0 10px 40px rgba(0,0,0,0.6);">
+    <!-- حاسبة الأوزان القياسية - مؤسسة محمد خالد -->
+<section id="standard-calc" style="background-color: #1a1a1a; color: #fff; padding: 40px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
+    <div style="max-width: 750px; margin: 0 auto; background: #222; padding: 30px; border-radius: 15px; border: 2px solid #d4af37;">
         
-        <h2 style="color: #d4af37; text-align: center; margin-bottom: 10px;">🏗️ حاسبة الأوزان الشاملة</h2>
-        <h3 style="text-align: center; font-size: 1rem; color: #aaa; margin-bottom: 30px;">Comprehensive Steel Weight Calculator</h3>
+        <h2 style="color: #d4af37; text-align: center; margin-bottom: 25px;">🏗️ حاسبة الأوزان المعتمدة (جداول الحديد)</h2>
 
-        <!-- اختيار نوع المقطع -->
-        <div style="margin-bottom: 25px;">
-            <label style="display: block; margin-bottom: 10px; font-weight: bold;">اختر نوع المقطع - Select Section Type:</label>
-            <select id="shape_selector" onchange="updateUI()" style="width: 100%; padding: 12px; background: #333; color: #d4af37; border: 1px solid #d4af37; border-radius: 8px; font-size: 1.1rem; font-weight: bold;">
-                <option value="upn">مجاري (UPN) - U-Channel</option>
-                <option value="ipe">جسر (IPE) - I-Beam</option>
-                <option value="heb">جسر عريض (HEB) - H-Beam</option>
-                <option value="tube">تيوب (مربع/مستطيل) - Steel Tube</option>
-                <option value="sheet">ألواح صاج - Steel Sheets</option>
-                <option value="solid">حديد مربع صب - Solid Square Bar</option>
+        <div style="margin-top: 20px;">
+            <label>نوع المقطع (Section Type):</label>
+            <select id="st_type" onchange="fillSizes()" style="width: 100%; padding: 12px; margin-top: 10px; background: #333; color: #fff; border: 1px solid #d4af37; border-radius: 8px;">
+                <option value="IPE">جسر IPE (I-Beam)</option>
+                <option value="HEB">جسر HEB (H-Beam الثقيل)</option>
+                <option value="UPN">مجاري UPN (U-Channel)</option>
             </select>
+
+            <label style="margin-top: 20px; display: block;">المقاس القياسي (Size):</label>
+            <select id="st_size" style="width: 100%; padding: 12px; margin-top: 10px; background: #333; color: #fff; border: 1px solid #ddd; border-radius: 8px;">
+                <!-- سيمتلئ بالجداول -->
+            </select>
+
+            <label style="margin-top: 20px; display: block;">الطول الإجمالي (متر):</label>
+            <input type="number" id="st_len" placeholder="مثلاً: 6" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px;">
         </div>
 
-        <!-- مدخلات القياسات -->
-        <div id="calc_inputs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <!-- سيتم ملؤها عبر الجافا سكريبت -->
-        </div>
+        <button onclick="calcStandard()" style="width: 100%; padding: 15px; margin-top: 30px; background: #d4af37; color: #1a1a1a; border: none; border-radius: 8px; font-size: 1.2rem; cursor: pointer; font-weight: bold;">احسب الوزن الحقيقي</button>
 
-        <button onclick="calculateFinalWeight()" style="width: 100%; padding: 18px; margin-top: 30px; background: #d4af37; color: #1a1a1a; border: none; border-radius: 8px; font-size: 1.3rem; cursor: pointer; font-weight: bold; transition: 0.3s;">احسب الوزن - Calculate Weight</button>
-
-        <!-- النتيجة -->
-        <div id="res_display" style="display: none; margin-top: 30px; padding: 25px; background: #1a1a1a; border-radius: 12px; text-align: center; border: 2px dashed #d4af37;">
-            <h3 style="margin: 0; color: #fff;">الوزن الإجمالي التقديري - Total Weight:</h3>
-            <div style="margin-top: 10px;"><span id="weight_val" style="color: #d4af37; font-size: 2.2rem; font-weight: bold;">0</span> <span style="font-size: 1.2rem; color: #d4af37;">كغ (kg)</span></div>
+        <div id="st_res" style="display: none; margin-top: 25px; padding: 25px; background: #111; border-radius: 12px; text-align: center; border: 1px dashed #d4af37;">
+            <h3 style="margin: 0;">الوزن الإجمالي بميزان السوق:</h3>
+            <div style="margin-top: 10px;"><span id="st_val" style="color: #d4af37; font-size: 2.5rem; font-weight: bold;">0</span> <small>كغ</small></div>
         </div>
     </div>
 </section>
 
 <script>
-const config = {
-    upn: { nameAr: "مجاري UPN", nameEn: "U-Channel", fields: ['H', 'B', 't1', 't2', 'L'] },
-    ipe: { nameAr: "جسر IPE", nameEn: "I-Beam", fields: ['H', 'B', 't1', 't2', 'L'] },
-    heb: { nameAr: "جسر HEB", nameEn: "H-Beam", fields: ['H', 'B', 't1', 't2', 'L'] },
-    tube: { nameAr: "تيوب", nameEn: "Tube", fields: ['H', 'B', 't1', 'L'] },
-    sheet: { nameAr: "صاج", nameEn: "Sheets", fields: ['W_m', 'L_m', 't1'] },
-    solid: { nameAr: "مربع صب", nameEn: "Solid Square", fields: ['B', 'L'] }
+// هذه هي "القاعدة" المعتمدة للأوزان (كغ لكل متر واحد)
+const dataTables = {
+    "IPE": {"80": 6.0, "100": 8.1, "120": 10.4, "140": 12.9, "160": 15.8, "180": 18.8, "200": 22.4, "220": 26.2, "240": 30.7, "270": 36.1, "300": 42.2},
+    "HEB": {"100": 20.4, "120": 26.7, "140": 33.7, "160": 42.6, "180": 51.2, "200": 61.3, "220": 71.5, "240": 83.2, "260": 93.0, "300": 117},
+    "UPN": {"80": 8.64, "100": 10.6, "120": 13.4, "140": 16.0, "160": 18.8, "180": 22.0, "200": 25.3, "220": 29.4, "240": 33.2, "300": 46.2}
 };
 
-const labels = {
-    H: "الارتفاع (H) Height (mm)",
-    B: "العرض (B) Width (mm)",
-    t1: "سماكة البطن (t1) Thickness (mm)",
-    t2: "سماكة الجناح (t2) Thickness (mm)",
-    L: "الطول (L) Length (m)",
-    W_m: "العرض (W) Width (m)",
-    L_m: "الطول (L) Length (m)"
-};
-
-function updateUI() {
-    const type = document.getElementById('shape_selector').value;
-    const container = document.getElementById('calc_inputs');
-    container.innerHTML = "";
-    config[type].fields.forEach(f => {
-        container.innerHTML += `<div><label style='display:block;margin-bottom:5px;font-size:0.9rem;'>${labels[f]}:</label>
-        <input type='number' id='val_${f}' style='width:100%;padding:10px;border-radius:5px;border:none;'></div>`;
-    });
-}
-
-function calculateFinalWeight() {
-    const type = document.getElementById('shape_selector').value;
-    const getV = (id) => parseFloat(document.getElementById('val_'+id)?.value || 0);
-    let weight = 0;
-    const rho = 7.85; // كثافة الحديد
-
-    if (type === 'upn' || type === 'ipe' || type === 'heb') {
-        let h=getV('H'), b=getV('B'), t1=getV('t1'), t2=getV('t2'), l=getV('L');
-        let area = ((h * t1) + 2 * (b - t1) * t2) / 100; // مساحة المقطع سم2
-        weight = area * (l * 100) * 0.00785;
-    } else if (type === 'tube') {
-        let h=getV('H'), b=getV('B'), t1=getV('t1'), l=getV('L');
-        weight = ((h + b) * 2 / 1000) * t1 * l * rho;
-    } else if (type === 'sheet') {
-        weight = getV('W_m') * getV('L_m') * getV('t1') * rho;
-    } else if (type === 'solid') {
-        weight = (Math.pow(getV('B'), 2) / 1000000) * getV('L') * 7850;
+function fillSizes() {
+    const type = document.getElementById('st_type').value;
+    const sizeSelect = document.getElementById('st_size');
+    sizeSelect.innerHTML = "";
+    for (let s in dataTables[type]) {
+        let opt = document.createElement("option");
+        opt.value = dataTables[type][s];
+        opt.text = type + " " + s + " (وزن المتر: " + dataTables[type][s] + " كغ)";
+        sizeSelect.add(opt);
     }
-
-    document.getElementById('weight_val').innerText = weight.toFixed(2);
-    document.getElementById('res_display').style.display = 'block';
 }
-updateUI(); // تشغيل أولي
+
+function calcStandard() {
+    const unitWeight = document.getElementById('st_size').value;
+    const len = document.getElementById('st_len').value;
+    if (len > 0) {
+        document.getElementById('st_val').innerText = (unitWeight * len).toFixed(2);
+        document.getElementById('st_res').style.display = 'block';
+    } else {
+        alert("يرجى إدخال الطول");
+    }
+}
+fillSizes();
 </script>
 
       <!-- حاسبة الأوزان الهندسية - مؤسسة محمد خالد -->
