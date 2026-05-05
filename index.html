@@ -226,160 +226,16 @@
 
     </div>
 </div>
-        <!-- حاسبة المقاطع التجارية - مؤسسة محمد خالد -->
-<section id="commercial-steel-calc" style="background-color: #f9f9f9; color: #333; padding: 50px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
-    <div style="max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 15px; border: 2px solid #d4af37; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-        
-        <h2 style="color: #d4af37; text-align: center; margin-bottom: 10px;">📏 حاسبة المقاطع التجارية</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">حساب أوزان التيوبات، الصاج، الحديد المربع والمبسط بدقة مليمترية</p>
+       <!-- قسم الحاسبات الهندسية الذكية - تصميم مضغوط ومحترف -->
+<section style="max-width: 850px; margin: 40px auto; direction: rtl; font-family: sans-serif; padding: 0 15px;">
+    <h2 style="text-align: center; color: #1a1a1a; margin-bottom: 25px; font-size: 1.8rem;">الأدوات الهندسية والخدمات الذكية 🛠️</h2>
 
-        <div style="margin-bottom: 25px;">
-            <label style="font-weight: bold;">نوع المقطع - Section Type:</label>
-            <select id="comm_type" onchange="updateCommInputs()" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px; border: 1px solid #ddd;">
-                <option value="tube">تيوب (مربع / مستطيل) - Steel Tube</option>
-                <option value="sheet">ألواح صاج - Steel Sheets</option>
-                <option value="flat">حديد مبسط - Flat Bar</option>
-                <option value="solid">حديد مربع صب - Solid Square</option>
-            </select>
-        </div>
-
-        <div id="comm_inputs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-            <!-- يتم ملؤها عبر السكريبت -->
-        </div>
-
-        <button onclick="calcCommWeight()" style="width: 100%; padding: 15px; margin-top: 25px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.2rem; cursor: pointer; font-weight: bold;">احسب الوزن الفعلي</button>
-
-        <div id="comm_res" style="display: none; margin-top: 25px; padding: 25px; background: #fffcf2; border-radius: 12px; text-align: center; border: 2px dashed #d4af37;">
-            <h3 style="margin: 0; color: #1a1a1a;">الوزن الناتج:</h3>
-            <div style="margin-top: 10px;"><span id="comm_val" style="color: #d4af37; font-size: 2.5rem; font-weight: bold;">0</span> <small>كغ (kg)</small></div>
-        </div>
-    </div>
-</section>
-
-<script>
-const commConfig = {
-    tube: { fields: [['a','العرض (ملم)'], ['b','الارتفاع (ملم)'], ['t','السماكة (ملم)'], ['l','الطول (متر)']] },
-    sheet: { fields: [['a','العرض (متر)'], ['b','الطول (متر)'], ['t','السماكة (ملم)']] },
-    flat: { fields: [['a','العرض (ملم)'], ['t','السماكة (ملم)'], ['l','الطول (متر)']] },
-    solid: { fields: [['a','الضلع (ملم)'], ['l','الطول (متر)']] }
-};
-
-function updateCommInputs() {
-    const type = document.getElementById('comm_type').value;
-    const container = document.getElementById('comm_inputs');
-    container.innerHTML = "";
-    commConfig[type].fields.forEach(f => {
-        container.innerHTML += `<div><label style="font-size:0.9rem;">${f[1]}:</label>
-        <input type="number" id="c_${f[0]}" style="width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:5px;"></div>`;
-    });
-}
-
-function calcCommWeight() {
-    const type = document.getElementById('comm_type').value;
-    const getV = (id) => parseFloat(document.getElementById('c_'+id)?.value || 0);
-    let weight = 0;
-    const rho = 7.85;
-
-    if (type === 'tube') {
-        weight = ((getV('a') + getV('b')) * 2 / 1000) * getV('t') * getV('l') * rho;
-    } else if (type === 'sheet') {
-        weight = getV('a') * getV('b') * getV('t') * rho;
-    } else if (type === 'flat') {
-        weight = (getV('a') / 1000) * (getV('t') / 1000) * getV('l') * 7850;
-    } else if (type === 'solid') {
-        weight = Math.pow(getV('a') / 1000, 2) * getV('l') * 7850;
-    }
-
-    document.getElementById('comm_val').innerText = weight.toFixed(2);
-    document.getElementById('comm_res').style.display = 'block';
-}
-updateCommInputs();
-</script>
-        <!-- نص الأرشفة لمحركات البحث والذكاء الاصطناعي -->
-<p style="text-align: center; color: #777; font-size: 0.95rem; margin-top: 20px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-    تقدم <strong>مؤسسة محمد خالد للحدادة الإفرنجية</strong> هذه الحاسبة الهندسية لمساعدة المقاولين والفنيين في سوريا على تقدير أوزان الحديد بدقة، بناءً على الجداول العالمية والمعايير الفنية المعتمدة في ورشاتنا.
-</p>
-    <!-- حاسبة الأوزان القياسية - مؤسسة محمد خالد -->
-<section id="standard-calc" style="background-color: #1a1a1a; color: #fff; padding: 40px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
-    <div style="max-width: 750px; margin: 0 auto; background: #222; padding: 30px; border-radius: 15px; border: 2px solid #d4af37;">
-        
-        <h2 style="color: #d4af37; text-align: center; margin-bottom: 25px;">🏗️ حاسبة الأوزان المعتمدة (جداول الحديد)</h2>
-
-        <div style="margin-top: 20px;">
-            <label>نوع المقطع (Section Type):</label>
-            <select id="st_type" onchange="fillSizes()" style="width: 100%; padding: 12px; margin-top: 10px; background: #333; color: #fff; border: 1px solid #d4af37; border-radius: 8px;">
-                <option value="IPE">جسر IPE (I-Beam)</option>
-                <option value="HEB">جسر HEB (H-Beam الثقيل)</option>
-                <option value="UPN">مجاري UPN (U-Channel)</option>
-            </select>
-
-            <label style="margin-top: 20px; display: block;">المقاس القياسي (Size):</label>
-            <select id="st_size" style="width: 100%; padding: 12px; margin-top: 10px; background: #333; color: #fff; border: 1px solid #ddd; border-radius: 8px;">
-                <!-- سيمتلئ بالجداول -->
-            </select>
-
-            <label style="margin-top: 20px; display: block;">الطول الإجمالي (متر):</label>
-            <input type="number" id="st_len" placeholder="مثلاً: 6" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px;">
-        </div>
-
-        <button onclick="calcStandard()" style="width: 100%; padding: 15px; margin-top: 30px; background: #d4af37; color: #1a1a1a; border: none; border-radius: 8px; font-size: 1.2rem; cursor: pointer; font-weight: bold;">احسب الوزن الحقيقي</button>
-
-        <div id="st_res" style="display: none; margin-top: 25px; padding: 25px; background: #111; border-radius: 12px; text-align: center; border: 1px dashed #d4af37;">
-            <h3 style="margin: 0;">الوزن الإجمالي بميزان السوق:</h3>
-            <div style="margin-top: 10px;"><span id="st_val" style="color: #d4af37; font-size: 2.5rem; font-weight: bold;">0</span> <small>كغ</small></div>
-        </div>
-    </div>
-</section>
-
-<script>
-// هذه هي "القاعدة" المعتمدة للأوزان (كغ لكل متر واحد)
-const dataTables = {
-    "IPE": {"80": 6.0, "100": 8.1, "120": 10.4, "140": 12.9, "160": 15.8, "180": 18.8, "200": 22.4, "220": 26.2, "240": 30.7, "270": 36.1, "300": 42.2},
-    "HEB": {"100": 20.4, "120": 26.7, "140": 33.7, "160": 42.6, "180": 51.2, "200": 61.3, "220": 71.5, "240": 83.2, "260": 93.0, "300": 117},
-    "UPN": {"80": 8.64, "100": 10.6, "120": 13.4, "140": 16.0, "160": 18.8, "180": 22.0, "200": 25.3, "220": 29.4, "240": 33.2, "300": 46.2}
-};
-
-function fillSizes() {
-    const type = document.getElementById('st_type').value;
-    const sizeSelect = document.getElementById('st_size');
-    sizeSelect.innerHTML = "";
-    for (let s in dataTables[type]) {
-        let opt = document.createElement("option");
-        opt.value = dataTables[type][s];
-        opt.text = type + " " + s + " (وزن المتر: " + dataTables[type][s] + " كغ)";
-        sizeSelect.add(opt);
-    }
-}
-
-function calcStandard() {
-    const unitWeight = document.getElementById('st_size').value;
-    const len = document.getElementById('st_len').value;
-    if (len > 0) {
-        document.getElementById('st_val').innerText = (unitWeight * len).toFixed(2);
-        document.getElementById('st_res').style.display = 'block';
-    } else {
-        alert("يرجى إدخال الطول");
-    }
-}
-fillSizes();
-</script>
-        
-        <!-- نص الأرشفة لمحركات البحث والذكاء الاصطناعي -->
-<p style="text-align: center; color: #777; font-size: 0.95rem; margin-top: 20px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-    تقدم <strong>مؤسسة محمد خالد للحدادة الإفرنجية</strong> هذه الحاسبة الهندسية لمساعدة المقاولين والفنيين في سوريا على تقدير أوزان الحديد بدقة، بناءً على الجداول العالمية والمعايير الفنية المعتمدة في ورشاتنا.
-</p>
-
-
-      <!-- حاسبة الأوزان الهندسية - مؤسسة محمد خالد -->
-<section id="iron-calculator" style="background-color: #f4f4f4; padding: 40px 15px; direction: rtl; font-family: sans-serif; text-align: right;">
-    <div style="max-width: 700px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); border-top: 5px solid #d4af37;">
-        
-        <h2 style="color: #d4af37; text-align: center; margin-bottom: 15px;">🧮 حاسبة الأوزان التقديرية الذكية</h2>
-        <p style="text-align: center; color: #555; margin-bottom: 25px;">أدخل بيانات مشروعك للحصول على الوزن الفعلي التقديري للحديد.</p>
-
-        <div style="margin-top: 20px;">
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">نوع العمل المطلـوب:</label>
-            <select id="work_type" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+    <!-- 1. حاسبة أوزان المشاريع (المرتبطة بالواتساب) -->
+    <details id="iron-calculator" style="background: #ffffff; border: 2px solid #d4af37; border-radius: 12px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <summary style="padding: 18px; font-weight: bold; color: #1a1a1a; outline: none; font-size: 1.1rem;">🧮 حاسبة أوزان المشاريع وطلب عرض سعر (واتساب)</summary>
+        <div style="padding: 25px; border-top: 1px solid #eee; background: #fffcf2;">
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">نوع العمل:</label>
+            <select id="work_type" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px;">
                 <option value="45">أبواب شقق وشبكات حماية</option>
                 <option value="85">أبواب خارجية وفلل ثقيلة</option>
                 <option value="120">أدراج حلزونية وأدراج لف</option>
@@ -387,54 +243,61 @@ fillSizes();
                 <option value="15">هياكل قرميد وسواتر</option>
                 <option value="25">هياكل كرفانات LGS حديثة</option>
             </select>
-
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">المساحة الإجمالية (متر مربع):</label>
-            <input type="number" id="work_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">المساحة الإجمالية (م²):</label>
+            <input type="number" id="work_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px;">
+            <button onclick="calculateExpertWeight()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold;">احسب الوزن التقديري</button>
+            <div id="expert-result" style="display: none; margin-top: 20px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fff;">
+                <h3 style="color: #1a1a1a;">الوزن الناتج: <span id="final-weight-val" style="color: #d4af37; font-size: 1.8rem;">0</span> كغ</h3>
+                <a id="wa-expert-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px;">💬 اطلب عرض سعر (واتساب)</a>
+            </div>
         </div>
+    </details>
 
-        <button onclick="calculateExpertWeight()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold; margin-top: 20px;">احسب الوزن الآن</button>
-
-        <!-- صندوق النتيجة -->
-        <div id="expert-result" style="display: none; margin-top: 25px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fffcf2;">
-            <h3 style="color: #1a1a1a; margin-bottom: 10px;">الوزن الإجمالي الناتج: <span id="final-weight-val" style="color: #d4af37; font-size: 1.8rem;">0</span> كغ</h3>
-            
-            <a id="wa-expert-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; margin-top: 15px;">
-                💬 اطلب عرض سعر لهذا الوزن (واتساب)
-            </a>
+    <!-- 2. حاسبة الجسور والمجاري القياسية -->
+    <details id="standard-calc" style="background: #1a1a1a; border: 2px solid #d4af37; border-radius: 12px; margin-bottom: 15px; cursor: pointer; transition: 0.3s;">
+        <summary style="padding: 18px; font-weight: bold; color: #d4af37; outline: none; font-size: 1.1rem;">🏗️ حاسبة أوزان الجسور والمجاري القياسية (IPE/UPN)</summary>
+        <div style="padding: 25px; border-top: 1px solid #333;">
+            <label style="color: #fff;">نوع المقطع:</label>
+            <select id="st_type" onchange="fillSizes()" style="width: 100%; padding: 12px; margin-top: 10px; background: #333; color: #fff; border: 1px solid #d4af37; border-radius: 8px;">
+                <option value="IPE">جسر IPE (I-Beam)</option>
+                <option value="HEB">جسر HEB (H-Beam الثقيل)</option>
+                <option value="UPN">مجاري UPN (U-Channel)</option>
+            </select>
+            <label style="margin-top: 15px; display: block; color: #fff;">المقاس القياسي:</label>
+            <select id="st_size" style="width: 100%; padding: 12px; margin-top: 10px; background: #333; color: #fff; border-radius: 8px;"></select>
+            <label style="margin-top: 15px; display: block; color: #fff;">الطول (متر):</label>
+            <input type="number" id="st_len" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px; border: none;">
+            <button onclick="calcStandard()" style="width: 100%; padding: 15px; margin-top: 20px; background: #d4af37; color: #1a1a1a; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold;">احسب الوزن بميزان السوق</button>
+            <div id="st_res" style="display: none; margin-top: 20px; padding: 20px; background: #111; border-radius: 10px; text-align: center; border: 1px dashed #d4af37;">
+                <h3 style="color: #fff;">الوزن الإجمالي: <span id="st_val" style="color: #d4af37; font-size: 2rem;">0</span> كغ</h3>
+            </div>
         </div>
-    </div>
+    </details>
+
+    <!-- 3. حاسبة المقاطع التجارية -->
+    <details id="commercial-calc" style="background: #ffffff; border: 2px solid #d4af37; border-radius: 12px; cursor: pointer; transition: 0.3s;">
+        <summary style="padding: 18px; font-weight: bold; color: #1a1a1a; outline: none; font-size: 1.1rem;">📏 حاسبة المقاطع التجارية (تيوبات، صاج، مبسط)</summary>
+        <div style="padding: 25px; border-top: 1px solid #eee;">
+            <label>نوع المقطع التجاري:</label>
+            <select id="comm_type" onchange="updateCommInputs()" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <option value="tube">تيوب (مربع / مستطيل)</option>
+                <option value="sheet">ألواح صاج</option>
+                <option value="flat">حديد مبسط</option>
+                <option value="solid">حديد مربع صب</option>
+            </select>
+            <div id="comm_inputs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;"></div>
+            <button onclick="calcCommWeight()" style="width: 100%; padding: 15px; margin-top: 20px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold;">احسب الوزن الفعلي</button>
+            <div id="comm_res" style="display: none; margin-top: 20px; padding: 20px; background: #fffcf2; border-radius: 10px; text-align: center; border: 2px dashed #d4af37;">
+                <h3 style="color: #1a1a1a;">الوزن الناتج: <span id="comm_val" style="color: #d4af37; font-size: 2rem;">0</span> كغ</h3>
+            </div>
+        </div>
+    </details>
+
+    <!-- نص أرشفة جوجل -->
+    <p style="text-align: center; color: #777; font-size: 0.9rem; margin-top: 25px; line-height: 1.6;">
+        تقدم مؤسسة محمد خالد هذه الحاسبات الهندسية لتقدير أوزان الحديد بدقة وفق الجداول العالمية والمعايير الفنية المعتمدة في ورشاتنا بسوريا.
+    </p>
 </section>
-
-<script>
-function calculateExpertWeight() {
-    const area = document.getElementById('work_area').value;
-    const typeSelect = document.getElementById('work_type');
-    const weightFactor = typeSelect.value;
-    const typeName = typeSelect.options[typeSelect.selectedIndex].text;
-
-    if(area > 0) {
-        // الحسبة تتم خلف الكواليس
-        let totalWeight = Math.round(area * weightFactor);
-        
-        document.getElementById('final-weight-val').innerText = totalWeight;
-        document.getElementById('expert-result').style.display = 'block';
-
-        // رقم هاتفك الصحيح: 0945509412
-        const myPhone = "963945509412"; 
-        const message = `أهلاً مؤسسة محمد خالد. قمت بحساب وزني التقديري عبر الموقع.\nالنوع: ${typeName}\nالمساحة: ${area}م²\nالوزن الناتج: ${totalWeight} كغ.\nأرجو تزويدي بعرض السعر.`;
-        const encodedMessage = encodeURIComponent(message);
-        
- document.getElementById('wa-expert-link').href = "https://wa.me/" + myPhone + "?text=" + encodedMessage;
-
-    } else {
-        alert("يرجى إدخال مساحة المشروع.");
-    }
-}
-</script>
-        <!-- نص الأرشفة لمحركات البحث والذكاء الاصطناعي -->
-<p style="text-align: center; color: #777; font-size: 0.95rem; margin-top: 20px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-    تقدم <strong>مؤسسة محمد خالد للحدادة الإفرنجية</strong> هذه الحاسبة الهندسية لمساعدة المقاولين والفنيين في سوريا على تقدير أوزان الحديد بدقة، بناءً على الجداول العالمية والمعايير الفنية المعتمدة في ورشاتنا.
-</p>
 
    <div class="section">
     <h2 style="text-align: center; color: #b00; font-weight: 700; margin-bottom: 35px; font-size: 1.8em;">أعمالنا</h2>
