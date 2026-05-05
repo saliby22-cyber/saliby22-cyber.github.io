@@ -230,27 +230,30 @@
 <section style="max-width: 850px; margin: 40px auto; direction: rtl; font-family: sans-serif; padding: 0 15px;">
     <h2 style="text-align: center; color: #1a1a1a; margin-bottom: 25px; font-size: 1.8rem;">الأدوات الهندسية والخدمات الذكية 🛠️</h2>
 
-    <!-- 1. حاسبة أوزان المشاريع (المرتبطة بالواتساب) -->
-    <details id="iron-calculator" style="background: #ffffff; border: 2px solid #d4af37; border-radius: 12px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-        <summary style="padding: 18px; font-weight: bold; color: #1a1a1a; outline: none; font-size: 1.1rem;">🧮 حاسبة أوزان المشاريع وطلب عرض سعر (واتساب)</summary>
-        <div style="padding: 25px; border-top: 1px solid #eee; background: #fffcf2;">
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">نوع العمل:</label>
-            <select id="work_type" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px;">
-                <option value="45">أبواب شقق وشبكات حماية</option>
-                <option value="85">أبواب خارجية وفلل ثقيلة</option>
-                <option value="120">أدراج حلزونية وأدراج لف</option>
-                <option value="40">هناجر ومستودعات صناعية</option>
-                <option value="15">هياكل قرميد وسواتر</option>
-                <option value="25">هياكل كرفانات LGS حديثة</option>
-            </select>
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">المساحة الإجمالية (م²):</label>
-            <input type="number" id="work_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px;">
-            <button onclick="calculateExpertWeight()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold;">احسب الوزن التقديري</button>
-            <div id="expert-result" style="display: none; margin-top: 20px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fff;">
-                <h3 style="color: #1a1a1a;">الوزن الناتج: <span id="final-weight-val" style="color: #d4af37; font-size: 1.8rem;">0</span> كغ</h3>
-                <a id="wa-expert-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px;">💬 اطلب عرض سعر (واتساب)</a>
-            </div>
-        </div>
+   <!-- الحاسبة الأولى بعد إعادة زر الواتساب المفقود -->
+<div style="padding: 25px; border-top: 1px solid #eee; background: #fffcf2;">
+    <label style="font-weight: bold; display: block; margin-bottom: 5px;">نوع العمل:</label>
+    <select id="work_type" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px;">
+        <option value="45">أبواب شقق وشبكات حماية</option>
+        <option value="85">أبواب خارجية وفلل ثقيلة</option>
+        <option value="120">أدراج حلزونية وأدراج لف</option>
+        <option value="40">هناجر ومستودعات صناعية</option>
+        <option value="15">هياكل قرميد وسواتر</option>
+        <option value="25">هياكل كرفانات LGS حديثة</option>
+    </select>
+    
+    <label style="font-weight: bold; display: block; margin-bottom: 5px;">المساحة الإجمالية (م²):</label>
+    <input type="number" id="work_area" placeholder="مثلاً: 10" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px;">
+    
+    <button onclick="calculateExpertWeight()" style="width: 100%; padding: 15px; background: #1a1a1a; color: #d4af37; border: 2px solid #d4af37; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold;">احسب الوزن التقديري</button>
+    
+    <!-- هذا هو الجزء الذي كان ناقصاً (صندوق النتيجة وزر الواتساب) -->
+    <div id="expert-result" style="display: none; margin-top: 20px; padding: 20px; border: 2px dashed #d4af37; border-radius: 10px; text-align: center; background: #fff;">
+        <h3 style="color: #1a1a1a;">الوزن الناتج: <span id="final-weight-val" style="color: #d4af37; font-size: 1.8rem;">0</span> كغ</h3>
+        <a id="wa-expert-link" href="#" target="_blank" style="display: inline-block; padding: 12px 25px; background: #25d366; color: #fff; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px;">💬 اطلب عرض سعر (واتساب)</a>
+    </div>
+</div>
+
     </details>
 
     <!-- 2. حاسبة الجسور والمجاري القياسية -->
