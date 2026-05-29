@@ -6,7 +6,6 @@
     <title>المتجر الإلكتروني | مؤسسة محمد خالد للحدادة</title>
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* التنسيق العام المتوافق مع هوية مؤسستك */
         :root {
             --primary-color: #b11e1e; /* اللون الأحمر الفاخر لمؤسستك */
             --dark-color: #1a1a1a;
@@ -25,7 +24,7 @@
             color: var(--dark-color);
         }
 
-        /* شريط الإعلانات العلوي المقتبس من المواقع العالمية */
+        /* شريط الإعلانات العلوي */
         .promo-bar {
             background-color: var(--primary-color);
             color: var(--white);
@@ -35,7 +34,6 @@
             font-weight: bold;
         }
 
-        /* ترويسة المتجر */
         header {
             background-color: var(--white);
             border-bottom: 1px solid var(--border-color);
@@ -55,14 +53,12 @@
             color: var(--gray);
         }
 
-        /* الحاوية الرئيسية */
         .container {
             max-width: 1200px;
             margin: 30px auto;
             padding: 0 20px;
         }
 
-        /* تنسيق أقسام المتجر */
         .shop-section {
             background-color: var(--white);
             border-radius: 8px;
@@ -95,14 +91,13 @@
             font-size: 14px;
         }
 
-        /* شبكة عرض المنتجات */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
 
-        /* بطاقة المنتج الاحترافية */
+        /* بطاقة المنتج المصلحة والمنسقة بالكامل */
         .product-card {
             background-color: var(--white);
             border: 1px solid var(--border-color);
@@ -119,7 +114,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        /* شارات المنتج الإعلانية */
         .product-badge {
             position: absolute;
             top: 15px;
@@ -135,13 +129,11 @@
 
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 320px; /* زيادة الارتفاع ليتناسق مع القطع الفاخرة */
             background-color: #eee;
-            position: relative;
             overflow: hidden;
         }
 
-        /* هذا الكود للتأكد من تناسق صور الكتالوج المعدلة بعد الفوتوشوب */
         .product-image img {
             width: 100%;
             height: 100%;
@@ -161,10 +153,11 @@
         }
 
         .product-title {
-            font-size: 18px;
+            font-size: 17px;
             margin: 0 0 10px 0;
             color: var(--dark-color);
             font-weight: bold;
+            line-height: 1.4;
         }
 
         .product-meta {
@@ -176,13 +169,12 @@
         }
 
         .product-price {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--primary-color);
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        /* أزرار الإجراءات */
         .product-actions {
             margin-top: auto;
             display: flex;
@@ -193,41 +185,39 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 15px;
+            padding: 12px 15px;
             border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
             text-decoration: none;
             transition: background 0.2s;
             cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
             background-color: var(--dark-color);
             color: var(--white);
             flex-grow: 1;
-            border: 1px solid var(--dark-color);
         }
 
         .btn-primary:hover {
             background-color: var(--primary-color);
-            border-color: var(--primary-color);
         }
 
         .btn-outline {
             background-color: transparent;
-            color: var(--dark-color);
-            border: 1px solid var(--border-color);
-            width: 40px;
+            color: #25d366;
+            border: 1px solid #25d366;
+            width: 45px;
+            font-size: 18px;
         }
 
         .btn-outline:hover {
-            background-color: var(--light-bg);
-            color: var(--primary-color);
-            border-color: var(--primary-color);
+            background-color: #25d366;
+            color: var(--white);
         }
 
-        /* زر العودة للموقع الرئيسي */
         .back-nav {
             text-align: center;
             margin-top: 40px;
@@ -242,7 +232,6 @@
             text-decoration: underline;
         }
 
-        /* التوافق مع شاشات الموبايل */
         @media (max-width: 768px) {
             .product-grid {
                 grid-template-columns: 1fr;
@@ -252,7 +241,6 @@
 </head>
 <body>
 
-    <!-- شريط ترويجي علوي احترافي بناء على طلبك للكفالة ومقاومة الصدأ -->
     <div class="promo-bar">
         🛡️ جميع منتجاتنا مكفولة لمدة سنتين ومطلية حرارياً بطبقات مقاومة للصدأ والرطوبة
     </div>
@@ -268,24 +256,28 @@
         <section class="shop-section">
             <div class="section-header">
                 <h2><i class="fa-solid fa-chair"></i> قسم الأثاث المودرن والبار</h2>
-                <span class="badge-count">قريباً المنتجات</span>
+                <span class="badge-count">منتج 1 جاهز</span>
             </div>
             <div class="product-grid">
                 
-                <!-- بطاقة منتج تجريبية فارغة جاهزة لصور الفوتوشوب الخاصة بك -->
+                <!-- تم إصلاح بطاقة المنتج بالكامل لتطابق قاطع الغرف الذهبي وصورته الفخرية -->
                 <div class="product-card">
-                    <div class="product-badge">جديد وتصميم خاص</div>
+                    <div class="product-badge">تصميم هندسي حصري</div>
+                    <div class="product-image">
+                        <!-- هنا تم ربط مسار صورتك الفخرية الـ WebP مباشرة لتظهر في الواجهة -->
+                        <img src="modern-gold-room-divider.webp" alt="قاطع غرف حديدي مودرن ذهبي">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">طقم طاولة بار دائرية مع كرسيين</h3>
+                        <h3 class="product-title">قاطع غرف حديدي فاخر وحامل نباتات (Room Divider)</h3>
                         <div class="product-meta">
-                            <span><i class="fa-solid fa-weight-hanging"></i> الوزن: 38 كغ</span>
+                            <span><i class="fa-solid fa-weight-hanging"></i> الوزن: 24 كغ</span>
                             <span><i class="fa-solid fa-shield"></i> مكفول ضد الصدأ</span>
                         </div>
-                        <div class="product-price">السعر عند الطلب</div>
+                        <div class="product-price">2,500,000 ل.س</div>
                         <div class="product-actions">
-                            <a href="product-divider.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> عرض التفاصيل </a>
-                            <a href="https://wa.me" target="_blank" class="btn btn-outline" title="طلب مباشر عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+                            <!-- هذا الزر ينقل العميل فوراً إلى صفحة التفاصيل الصارمة والمواصفات الفنية للقطعة -->
+                            <a href="product-divider.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> عرض الميزات والمواصفات</a>
+                            <a href="https://wa.meً%20مؤسسة%20محمد%20خالد،%20أرغب%20في%20طلب%20قاطع%20الغرف%20الهندسي%20الذهبي%20بسعر%202,500,000%20ل.س" target="_blank" class="btn btn-outline" title="طلب مباشر عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -298,10 +290,10 @@
         <section class="shop-section">
             <div class="section-header">
                 <h2><i class="fa-solid fa-door-closed"></i> قسم أبواب الأمان والفلل</h2>
-                <span class="badge-count">قريباً المنتجات</span>
+                <span class="badge-count">قريباً</span>
             </div>
             <div class="product-grid">
-                <!-- المنتجات ستضاف هنا خطوة بخطوة عند جاهزية الصور -->
+                <!-- المنتجات القادمة تضاف هنا بنفس الطريقة -->
             </div>
         </section>
 
@@ -310,6 +302,18 @@
         <section class="shop-section">
             <div class="section-header">
                 <h2><i class="fa-solid fa-tree"></i> قسم ديكورات الحدائق والخيم</h2>
-                <span class="badge-count">قريباً المنتجات</span>
+                <span class="badge-count">قريباً</span>
             </div>
             <div class="product-grid">
+                <!-- المنتجات القادمة تضاف هنا بنفس الطريقة -->
+            </div>
+        </section>
+
+        <div class="back-nav">
+            <a href="index.html"><i class="fa-solid fa-arrow-right"></i> العودة إلى صفحة المؤسسة الرئيسية وحاسبة الأوزان</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
