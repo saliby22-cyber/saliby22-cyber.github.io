@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتجر الإلكتروني | مؤسسة محمد خالد للحدادة</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* التنسيق العام المتوافق مع هوية مؤسستك */
+        :root {
+            --primary-color: #b11e1e; /* اللون الأحمر الفاخر لمؤسستك */
+            --dark-color: #1a1a1a;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --gray: #666;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+        }
+
+        /* شريط الإعلانات العلوي المقتبس من المواقع العالمية */
+        .promo-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* ترويسة المتجر */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: var(--dark-color);
+        }
+
+        header p {
+            margin: 5px 0 0;
+            color: var(--gray);
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* تنسيق أقسام المتجر */
+        .shop-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--dark-color);
+        }
+
+        .badge-count {
+            background-color: var(--light-bg);
+            color: var(--gray);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* شبكة عرض المنتجات */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* بطاقة المنتج الاحترافية */
+        .product-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* شارات المنتج الإعلانية */
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* هذا الكود للتأكد من تناسق صور الكتالوج المعدلة بعد الفوتوشوب */
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* أزرار الإجراءات */
+        .product-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-color);
+            color: var(--white);
+            flex-grow: 1;
+            border: 1px solid var(--dark-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--dark-color);
+            border: 1px solid var(--border-color);
+            width: 40px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* زر العودة للموقع الرئيسي */
+        .back-nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-nav a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .back-nav a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* التوافق مع شاشات الموبايل */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط ترويجي علوي احترافي بناء على طلبك للكفالة ومقاومة الصدأ -->
+    <div class="promo-bar">
+        🛡️ جميع منتجاتنا مكفولة لمدة سنتين ومطلية حرارياً بطبقات مقاومة للصدأ والرطوبة
+    </div>
+
+    <header>
+        <h1>مؤسسة محمد خالد للحدادة الأفرنجية</h1>
+        <p>المتجر الإلكتروني الرسمي - قطع فريدة صُنعت لتدوم لعقود</p>
+    </header>
+
+    <div class="container">
+
+        <!-- ================= القسم الأول: الأثاث المودرن والبار ================= -->
+        <section class="shop-section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-chair"></i> قسم الأثاث المودرن والبار</h2>
+                <span class="badge-count">قريباً المنتجات</span>
+            </div>
+            <div class="product-grid">
+                
+                <!-- بطاقة منتج تجريبية فارغة جاهزة لصور الفوتوشوب الخاصة بك -->
+                <div class="product-card">
+                    <div class="product-badge">جديد وتصميم خاص</div>
+                    <div class="product-image">
+                        <!-- هنا ستضع مسار صورة الفوتوشوب لاحقاً -->
+                        <div style="display:flex; justify-content:center; align-items:center; height:100%; color:#aaa;">قيد تجهيز صورة الفوتوشوب</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">طقم طاولة بار دائرية مع كرسيين</h3>
+                        <div class="product-meta">
+                            <span><i class="fa-solid fa-weight-hanging"></i> الوزن: 38 كغ</span>
+                            <span><i class="fa-solid fa-shield"></i> مكفول ضد الصدأ</span>
+                        </div>
+                        <div class="product-price">السعر عند الطلب</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> عرض التفاصيل والقصة</a>
+                            <a href="https://wa.me" target="_blank" class="btn btn-outline" title="طلب مباشر عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= القسم الثاني: أبواب الأمان والفلل ================= -->
+        <section class="shop-section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-door-closed"></i> قسم أبواب الأمان والفلل</h2>
+                <span class="badge-count">قريباً المنتجات</span>
+            </div>
+            <div class="product-grid">
+                <!-- المنتجات ستضاف هنا خطوة بخطوة عند جاهزية الصور -->
+            </div>
+        </section>
+
+
+        <!-- ================= القسم الثالث: ديكورات الحدائق والخيم ================= -->
+        <section class="shop-section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-tree"></i> قسم ديكورات الحدائق والخيم</h2>
+                <span class="badge-count">قريباً المنتجات</span>
+            </div>
+            <div class="product-grid">
