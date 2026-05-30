@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المواصفات الفنية - باب حديد أمان مصفح</title>
-    <!-- استدعاء أيقونات FontAwesome لتطابق تصميم الموقع الرئيسي -->
+    <title>باب حديد أمان مصفح للفلل والشقق</title>
     <link rel="stylesheet" href="https://cloudflare.com">
-    
     <style>
         :root {
             --primary-color: #b11e1e;
+            --secondary-color: #2e7d32;
             --dark-color: #1a1a1a;
             --light-bg: #f9f9f9;
             --border-color: #e0e0e0;
@@ -22,105 +21,197 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 20px auto;
+        }
+        .top-nav {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .top-nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .top-nav a:hover {
+            color: var(--primary-color);
+        }
+        .product-main {
+            display: flex;
+            gap: 40px;
             background: #ffffff;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .header-area {
-            text-align: center;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             margin-bottom: 30px;
         }
-        .header-area h1 {
-            color: var(--primary-color);
-            margin: 0 0 10px 0;
-            font-size: 28px;
+        .product-gallery {
+            flex: 1;
+            text-align: center;
         }
-        .header-area p {
+        .product-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 28px;
+            color: var(--dark-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .product-title span {
+            display: block;
+            font-size: 18px;
             color: #666;
-            margin: 0;
+            margin-top: 5px;
+        }
+        .badges-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .badge {
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .badge-green { background-color: #e8f5e9; color: #2e7d32; }
+        .badge-orange { background-color: #fff3e0; color: #ef6c00; }
+        .product-desc {
+            color: #444;
+            line-height: 1.8;
+            font-size: 16px;
+            border-right: 3px solid var(--primary-color);
+            padding-right: 15px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .price-box {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .price-label { color: #888; font-size: 13px; margin-bottom: 5px; }
+        .price-value { font-size: 32px; color: var(--primary-color); font-weight: 800; }
+        .order-btn {
+            display: block;
+            background-color: #10b981;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .order-btn:hover { background-color: #059669; }
+        .specs-section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .specs-heading {
+            font-size: 20px;
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
         .specs-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 30px;
         }
-        .specs-table th, .specs-table td {
-            padding: 14px 18px;
-            text-align: right;
+        .specs-table td {
+            padding: 15px;
             border-bottom: 1px solid var(--border-color);
+            font-size: 15px;
         }
-        .specs-table th {
-            background-color: #f5f5f5;
-            color: var(--dark-color);
-            font-weight: 700;
-            width: 35%;
-        }
-        .specs-table tr:hover {
-            background-color: #fcfcfc;
-        }
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--dark-color);
-            color: #fff;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .back-btn:hover {
-            background-color: var(--primary-color);
+        .specs-table tr:nth-child(even) { background-color: #fcfcfc; }
+        .spec-label { font-weight: bold; color: var(--dark-color); width: 25%; }
+        .spec-value { color: #555; text-align: left; }
+        @media (max-width: 768px) {
+            .product-main { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-area">
-        <h1><i class="fa-solid fa-shield-halved"></i> جدول المواصفات الفنية والميزات</h1>
-        <p>باب حديد أمان مصفح للفلل والشقق الفاخرة</p>
+    <div class="top-nav">
+        <a href="shop.html">العودة إلى المتجر الرئيسي</a>
     </div>
 
-    <table class="specs-table">
-        <tbody>
-            <tr>
-                <th><i class="fa-solid fa-layer-group"></i> نوع الهيكل</th>
-                <td>حديد مصفح ومقاوم للاختراق والخلع بمتانة عالية</td>
-            </tr>
-            <tr>
-                <th><i class="fa-solid fa-fill-drip"></i> نوع الطلاء</th>
-                <td>حراري مقاوم للرطوبة، العوامل الجوية، والخدوش (صناعة ممتازة)</td>
-            </tr>
-            <tr>
-                <th><i class="fa-solid fa-lock"></i> نظام الأمان والاستعاضة</th>
-                <td>كالون أمان متعدد الألسنة مع نقاط إغلاق جانبية وعلوية</td>
-            </tr>
-            <tr>
-                <th><i class="fa-solid fa-palette"></i> الديكور الخارجي</th>
-                <td>تطعيم بالخشب الطبيعي المعالج المقاوم للرطوبة والشمس</td>
-            </tr>
-            <tr>
-                <th><i class="fa-solid fa-ruler-combined"></i> المقاسات والأبعاد</th>
-                <td>تفصيل وتصنيع مخصص بالكامل حسب مقاس فتحة الباب في منزلكم</td>
-            </tr>
-            <tr>
-                <th><i class="fa-solid fa-shield"></i> فترة الكفالة والضمان</th>
-                <td>كفالة حقيقية لمدة خمس سنوات كاملة من ورشتنا لخدمتكم بشكل مضمون</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="product-main">
+        <div class="product-gallery">
+            <img src="villa-security-door.webp" alt="باب حديد أمان مصفح">
+        </div>
+        
+        <div class="product-details">
+            <h1 class="product-title">
+                باب حديد أمان مصفح للفلل والشقق
+                <span>(Luxury Security Villa Door)</span>
+            </h1>
+            
+            <div class="badges-row">
+                <span class="badge badge-green">تصنيع متين عالي الحماية</span>
+                <span class="badge badge-orange">كفالة خمس سنوات كاملة</span>
+            </div>
+            
+            <div class="product-desc">
+                أكثر من مجرد باب خارجي.. إنه الحارس الأول لأمن عائلتك وممتلكاتك. صممنا هذا الباب المصفح ليجمع بين الصلابة المطلقة الفولاذية ولمسة الفخامة العصرية المستوحاة من أرقى تصاميم الفلل. يدمج التصميم بذكاء بين متانة الهيكل الداخلي ومقاومته للخلع، وبين المظهر الخارجي المطعّم بالخشب الطبيعي الأنيق، ليكون واجهة مشرفة تعكس رقي منزلك وتمنحك الطمأنينة والأمان الكامل.
+            </div>
+            
+            <div class="price-box">
+                <div class="price-label">السعر الحالي للمنتج الجاهز:</div>
+                <div class="price-value">$ 250</div>
+            </div>
+            
+            <a href="https://wa.meً%20مؤسسة%20محمد%20خالد،%20أود%20طلب%20باب%20الأمان%20للفلل" target="_blank" class="order-btn">
+                اطلب الآن عبر واتساب ومباشرة من المعمل
+            </a>
+        </div>
+    </div>
 
-    <div style="text-align: center;">
-        <a href="shop.html" class="back-btn">
-            <i class="fa-solid fa-arrow-right"></i> العودة إلى صفحة المتجر الرئيسي
-        </a>
+    <div class="specs-section">
+        <h2 class="specs-heading">المواصفات الهندسية الفنية</h2>
+        <table class="specs-table">
+            <tbody>
+                <tr>
+                    <td class="spec-label">نوع المعدن الأساسي</td>
+                    <td class="spec-value">حديد فولاذي مصفح (سماكة مخصصة ضد الاختراق)</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">المواد المدمجة</td>
+                    <td class="spec-value">تطعيم خشب طبيعي معالج (مقاوم للرطوبة والشمس)</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">نظام الإغلاق والأمان</td>
+                    <td class="spec-value">كالون أمان مصفح متعدد الألسنة بنقاط تثبيت جانبية</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">تقنية الطلاء</td>
+                    <td class="spec-value">طلاء حراري فريد مقاوم للخدوش والعوامل الجوية بالكامل</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">الوزن الهندسي الفعلي</td>
+                    <td class="spec-value">ثقيل وموزون لضمان الاستقرار الفوق ممتاز والمتانة لسنوات طويلة</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">الأبعاد القياسية</td>
+                    <td class="spec-value">تصنيع وتفصيل مخصص بالكامل بناءً على المقاسات الفعلية لمنزلك</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
