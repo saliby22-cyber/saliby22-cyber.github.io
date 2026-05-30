@@ -3,7 +3,7 @@
 <!-- Google tag (gtag.js) -->
 <head>
     <meta charset="UTF-8">
-    <script async src="https://googletagmanager.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6RSJQYPBHJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -104,11 +104,15 @@
             font-size: 13px;
             font-weight: bold;
         }
+        
+        /* شبكة المنتجات المعدلة بعناية لمنع المشاكل البصرية */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
             gap: 30px;
         }
+        
+        /* بطاقة المنتج الموزونة الترتيب لحماية العناصر من الاختفاء */
         .product-card {
             background-color: white;
             border: 1px solid #eee;
@@ -118,7 +122,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            min-height: 580px; /* تحديد حد أدنى للارتفاع يضمن استيعاب كل العناصر */
         }
         .product-card:hover {
             transform: translateY(-5px);
@@ -136,27 +140,33 @@
             border-radius: 3px;
             z-index: 10;
         }
+        
+        /* ضبط مساحة عرض الصورة بدقة لتترك متسعاً للأسفل */
         .product-image {
             width: 100%;
             height: 280px; 
             background-color: #fcfcfc;
             overflow: hidden;
             position: relative;
+            border-bottom: 1px solid #eee;
         }
         .product-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* تظهر كاملة بدون أي قص بناء على طلبك */
+            object-fit: contain;
             transition: transform 0.4s ease;
         }
         .product-card:hover .product-image img {
             transform: scale(1.08); 
         }
+        
+        /* الحاوية الداخلية للمعلومات والأزرار */
         .product-info {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            flex-grow: 1; /* تجعل المساحة تتمدد لتملأ البطاقة بالكامل */
+            justify-content: space-between; /* توزيع العناصر بشكل متناسق من الأعلى للأسفل */
         }
         .product-title {
             font-size: 17px;
@@ -185,10 +195,12 @@
         }
         .product-price {
             font-size: 24px;
-            color: #111;
+            color: #b00;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
+        
+        /* صندوق أزرار واضحة ومستقرة في القاع */
         .product-actions {
             margin-top: auto;
             display: flex;
@@ -276,13 +288,4 @@
                 <div class="product-card">
                     <div class="product-badge">تصميم خاص</div>
                     <div class="product-image">
-                        <img src="modern-gold-room-divider.webp" alt="قاطع غرف حديدي مودرن ذهبي">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">
-                            قاطع غرف هندسي فاخر وحامل نباتات 
-                            <span class="en-text">(Room Divider)</span>
-                        </h3>
-                        
-                        <div class="product-meta">
-                            <span><i class="fa-solid fa-weight-hanging"></i> الوزن: 24 كغ</span>
+                        <img src="modern-gold-room-divider.webp" alt="قاطع غرف حديديودن ذهبي">
