@@ -24,35 +24,74 @@
             color: var(--dark-color);
         }
 
-        /* شريط الإعلانات العلوي */
-        .promo-bar {
-            background-color: var(--primary-color);
-            color: var(--white);
+              /* ترويسة المتجر المطابقة لموقعك الرئيسي والمدونة بالكامل */
+        header {
+            background-color: #1a1a1a;
+            padding: 35px 20px;
             text-align: center;
-            padding: 10px;
-            font-size: 14px;
-            font-weight: bold;
+            border-bottom: 3px solid #b11e1e;
         }
 
-        header {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        /* الشعار الدائري الخاص بمؤسستك في الأعلى */
+        .store-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 2px solid #ffcc00;
+            object-fit: cover;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 28px;
-            color: var(--dark-color);
+            margin: 0 0 10px 0;
+            font-size: 26px;
+            color: #ffcc00; /* الخط الذهبي المميز لموقعك */
+            font-weight: 700;
         }
 
-        header p {
-            margin: 5px 0 0;
-            color: var(--gray);
+        header .sub-title {
+            margin: 0 0 20px 0;
+            color: #ccc;
+            font-size: 14px;
+            letter-spacing: 0.5px;
         }
 
+        /* أزرار القائمة الصفراء مع زر العودة الفخم */
+        .store-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .store-nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .store-nav a:hover {
+            color: #ffffff;
+        }
+
+        /* تمييز زر العودة للخلف ليكون واضحاً */
+        .store-nav a.btn-back {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .store-nav a.btn-back:hover {
+            background-color: #b11e1e;
+            border-color: #b11e1e;
         .container {
             max-width: 1200px;
             margin: 30px auto;
