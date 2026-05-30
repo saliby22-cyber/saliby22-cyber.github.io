@@ -45,6 +45,26 @@
         .specs-table td { padding: 14px; border-bottom: 1px solid var(--border-color); font-size: 15px; }
         .specs-table tr:nth-child(even) { background-color: var(--light-bg); }
             .specs-label { font-weight: bold; color: var(--dark-color); width: 30%; }
+       @media (max-width: 768px) {
+    .product-container {
+        flex-direction: column !important;
+        padding: 10px !important;
+    }
+    .product-right-side, .product-left-side {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .main-image-wrapper img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .product-title {
+        font-size: 22px !important;
+        line-height: 1.5 !important;
+    }
+}
+
+
 </style>
 </head>
 <body>
