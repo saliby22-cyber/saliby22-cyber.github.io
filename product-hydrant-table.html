@@ -136,6 +136,39 @@
         });
         wrapper.addEventListener('mouseleave', () => { img.style.transformOrigin = 'center center'; });
     </script>
+    <!-- كود ذكي لإجبار الصفحة على الترتيب العمودي الأنيق على الهواتف المحمولة -->
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // التحقق مما إذا كان المستخدم يفتح الموقع من شاشة هاتف محمولة (أقل من 768 بكسل)
+        if (window.innerWidth <= 768) {
+            // البحث عن الحاوية الرئيسية المرنة التي تجمع الصورة والنصوص
+            const flexContainer = document.querySelector('div[style*="display: flex"]');
+            if (flexContainer) {
+                // تحويل الترتيب لعمودي (الصورة في الأعلى والنصوص بالأسفل)
+                flexContainer.style.setProperty('flex-direction', 'column', 'important');
+                flexContainer.style.setProperty('gap', '20px', 'important');
+            }
+
+            // تكبير الصورة لتصبح واضحة وبعرض مناسب على الهاتف
+            const productImage = flexContainer ? flexContainer.querySelector('img') : null;
+            if (productImage) {
+                productImage.style.setProperty('width', '100%', 'important');
+                productImage.style.setProperty('max-width', '320px', 'important');
+                productImage.style.setProperty('height', 'auto', 'important');
+                productImage.style.setProperty('margin', '0 auto', 'important');
+                productImage.style.setProperty('display', 'block', 'important');
+            }
+
+            // ضبط حجم خط العنوان ليتناسب مع أبعاد الموبايل الصغيرة
+            const productTitle = document.querySelector('h1');
+            if (productTitle) {
+                productTitle.style.setProperty('font-size', '22px', 'important');
+                productTitle.style.setProperty('line-height', '1.5', 'important');
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
         @media (max-width: 900px) { .product-container { grid-template-columns: 1fr; } .main-image-wrapper { height: 380px; } }
