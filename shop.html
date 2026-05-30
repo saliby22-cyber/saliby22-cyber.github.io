@@ -8,8 +8,8 @@
     <style>
         :root {
             --primary-color: #b11e1e; /* الأحمر الفاخر لمؤسستك */
-            --dark-color: #1a1a1a;
-            --light-bg: #f9f9f9;
+            --gold-color: #ffcc00;    /* الأصفر الذهبي الفخم لموقعك */
+            --dark-color: #1a1a1a;    /* الخلفية الداكنة لموقعك */
             --white: #ffffff;
             --gray: #666;
             --border-color: #ddd;
@@ -20,16 +20,16 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: var(--light-bg);
-            color: var(--dark-color);
+            background-color: #f9f9f9;
+            color: #1a1a1a;
         }
 
-              /* ترويسة المتجر المطابقة لموقعك الرئيسي والمدونة بالكامل */
+        /* ترويسة المتجر الفاخرة المطابقة لموقعك الرئيسي والمدونة بالكامل */
         header {
-            background-color: #1a1a1a;
+            background-color: var(--dark-color);
             padding: 35px 20px;
             text-align: center;
-            border-bottom: 3px solid #b11e1e;
+            border-bottom: 3px solid var(--primary-color);
         }
 
         /* الشعار الدائري الخاص بمؤسستك في الأعلى */
@@ -38,14 +38,14 @@
             height: 80px;
             margin-bottom: 15px;
             border-radius: 50%;
-            border: 2px solid #ffcc00;
+            border: 2px solid var(--gold-color);
             object-fit: cover;
         }
 
         header h1 {
             margin: 0 0 10px 0;
             font-size: 26px;
-            color: #ffcc00; /* الخط الذهبي المميز لموقعك */
+            color: var(--gold-color); /* الخط الذهبي المميز لموقعك */
             font-weight: 700;
         }
 
@@ -56,7 +56,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* أزرار القائمة الصفراء مع زر العودة الفخم */
+        /* أزرار القائمة الصفراء المطابقة لموقعك مع زر العودة الفخم */
         .store-nav {
             display: flex;
             justify-content: center;
@@ -66,7 +66,7 @@
         }
 
         .store-nav a {
-            color: #ffcc00;
+            color: var(--gold-color);
             text-decoration: none;
             font-size: 15px;
             font-weight: bold;
@@ -77,12 +77,12 @@
         }
 
         .store-nav a:hover {
-            color: #ffffff;
+            color: var(--white);
         }
 
         /* تمييز زر العودة للخلف ليكون واضحاً */
         .store-nav a.btn-back {
-            color: #ffffff;
+            color: var(--white);
             background-color: rgba(255, 255, 255, 0.1);
             padding: 5px 12px;
             border-radius: 4px;
@@ -90,14 +90,18 @@
         }
 
         .store-nav a.btn-back:hover {
-            background-color: #b11e1e;
-            border-color: #b11e1e;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* الحاوية الرئيسية وضبط الأبعاد لمنع تزحلق المنتجات */
         .container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 40px auto 60px;
             padding: 0 20px;
         }
 
+        /* تصميم أقسام المتجر */
         .shop-section {
             background-color: var(--white);
             border-radius: 8px;
@@ -111,7 +115,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--light-bg);
+            border-bottom: 2px solid #f4f4f4;
             padding-bottom: 15px;
             margin-bottom: 25px;
         }
@@ -119,23 +123,26 @@
         .section-header h2 {
             margin: 0;
             font-size: 22px;
-            color: var(--dark-color);
+            color: #1a1a1a;
         }
 
         .badge-count {
-            background-color: var(--light-bg);
-            color: var(--gray);
+            background-color: #fff1f1;
+            color: var(--primary-color);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 14px;
+            font-weight: bold;
         }
 
+        /* شبكة عرض المنتجات */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
 
+        /* بطاقة المنتج الموزونة الترتيب */
         .product-card {
             background-color: var(--white);
             border: 1px solid var(--border-color);
@@ -165,26 +172,24 @@
             z-index: 10;
         }
 
-        /* تعديل إطار الصورة ليناسب حركة التكبير التفاعلية */
+        /* ضبط حجم إطار الصورة وثبات التكبير التفاعلي وميزة الحجم الكامل */
         .product-image {
             width: 100%;
-            height: 340px; 
+            height: 360px; 
             background-color: #eee;
             overflow: hidden;
             position: relative;
         }
 
-        /* كود تأثير التكبير المطور (Zoom Effect) */
         .product-image img {
             width: 100%;
             height: 100%;
-           object-fit: contain;
-            transition: transform 0.4s ease-in-out; /* حركة ناعمة وانسيابية */
+            object-fit: contain; /* تظهر كاملة بدون أي قص بناء على طلبك */
+            transition: transform 0.4s ease-in-out;
         }
 
-        /* تكبير الصورة لحجمها الطبيعي وبشكل فخم عند تمرير الماوس */
         .product-card:hover .product-image img {
-            transform: scale(1.12); 
+            transform: scale(1.08); 
         }
 
         .product-info {
@@ -197,17 +202,17 @@
         .product-title {
             font-size: 17px;
             margin: 0 0 12px 0;
-            color: var(--dark-color);
+            color: #1a1a1a;
             font-weight: bold;
             line-height: 1.5;
             text-align: right;
         }
 
-        /* منع انقلاب النصوص الإنجليزية */
         .en-text {
             display: inline-block;
             direction: ltr;
             font-family: 'Segoe UI', sans-serif;
+            color: #777;
         }
 
         .product-meta {
@@ -227,7 +232,6 @@
             text-align: right;
         }
 
-        /* إعادة هندسة أزرار الإجراءات لتصبح واضحة واحترافية */
         .product-actions {
             margin-top: auto;
             display: flex;
@@ -251,7 +255,7 @@
         }
 
         .btn-primary {
-            background-color: var(--dark-color);
+            background-color: #1a1a1a;
             color: var(--white);
         }
 
@@ -259,7 +263,6 @@
             background-color: var(--primary-color);
         }
 
-        /* تصميم زر الواتساب الجديد والواضح جداً */
         .btn-whatsapp {
             background-color: transparent;
             color: #25d366;
@@ -271,21 +274,11 @@
             color: var(--white);
         }
 
-        .back-nav {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .back-nav a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 15px;
-        }
-        .back-nav a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
         @media (max-width: 768px) {
+            .store-nav {
+                flex-direction: column;
+                gap: 12px;
+            }
             .product-grid {
                 grid-template-columns: 1fr;
             }
@@ -294,13 +287,19 @@
 </head>
 <body>
 
-    <div class="promo-bar">
-        🛡️ جميع منتجاتنا مكفولة لمدة سنتين ومطلية حرارياً بطبقات مقاومة للصدأ والرطوبة
-    </div>
-
+    <!-- الترويسة المدمجة الفاخرة المطابقة لروح موقعك والمدونة بالكامل -->
     <header>
-        <h1>مؤسسة محمد خالد للحدادة الأفرنجية</h1>
-        <p>المتجر الإلكتروني الرسمي - قطع فريدة صُنعت لتدوم لعقود</p>
+        <!-- استدعاء نفس شعارك الرسمي المعتمد -->
+        <img src="logo.jpg" alt="شعار مؤسسة محمد خالد" class="store-logo" onerror="this.style.display='none'">
+        <h1>مؤسسة محمد خالد للحدادة – الأفرنجية</h1>
+        <div class="sub-title">درايبزينات فلل • بوابات حديد فاخرة • أبواب مدنية</div>
+        
+        <!-- روابط التنقل والرجوع السلس للخلف -->
+        <div class="store-nav">
+            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-right"></i> العودة للموقع الرئيسي وحاسبة الأوزان</a>
+            <a href="index.html#blog"><i class="fa-solid fa-newspaper"></i> المدونة التقنية</a>
+            <a href="shop.html" style="border-bottom: 2px solid var(--gold-color); padding-bottom: 2px;"><i class="fa-solid fa-store"></i> المتجر الإلكتروني</a>
+        </div>
     </header>
 
     <div class="container">
@@ -309,50 +308,20 @@
         <section class="shop-section">
             <div class="section-header">
                 <h2><i class="fa-solid fa-chair"></i> قسم الأثاث المودرن والبار</h2>
-                <span class="badge-count">منتج 1 جاهز</span>
+                <span class="badge-count">قطعة واحدة متوفرة</span>
             </div>
             <div class="product-grid">
                 
                 <div class="product-card">
-                    <div class="product-badge">تصميم هندسي حصري</div>
+                    <div class="product-badge">تصميم خاص</div>
                     <div class="product-image">
                         <img src="modern-gold-room-divider.webp" alt="قاطع غرف حديدي مودرن ذهبي">
                     </div>
                     <div class="product-info">
-                        <!-- إصلاح ترتيب العنوان واللغات -->
                         <h3 class="product-title">
-                            قاطع غرف حديدي فاخر وحامل نباتات 
+                            قاطع غرف هندسي فاخر وحامل نباتات 
                             <span class="en-text">(Room Divider)</span>
                         </h3>
+                        
                         <div class="product-meta">
                             <span><i class="fa-solid fa-weight-hanging"></i> الوزن: 24 كغ</span>
-                            <span><i class="fa-solid fa-shield-halved"></i> مكفول ضد الصدأ</span>
-                        </div>
-                        <div class="product-price">2,500,000 ل.س</div>
-                        <div class="product-actions">
-                            <a href="product-divider.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> عرض الميزات والمواصفات</a>
-                            <!-- زر الواتساب المطور والمقروء بالكامل -->
-                            <a href="https://wa.me/963945509412" target="_blank" class="btn btn-whatsapp">
-    <i class="fa-brands fa-whatsapp"></i> طلب مباشر عبر واتساب
-</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ================= القسم الثاني: أبواب الأمان والفلل ================= -->
-        <section class="shop-section">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-door-closed"></i> قسم أبواب الأمان والفلل</h2>
-                <span class="badge-count">قريباً</span>
-            </div>
-            <div class="product-grid"></div>
-        </section>
-
-        <!-- ================= القسم الثالث: ديكورات الحدائق والخيم ================= -->
-        <section class="shop-section">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-tree"></i> قسم ديكورات الحدائق والخيم</h2>
-                <span class="badge-count">قريباً</span>
