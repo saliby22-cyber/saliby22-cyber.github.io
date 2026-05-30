@@ -1,249 +1,205 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+<!-- Google tag (gtag.js) -->
 <head>
     <meta charset="UTF-8">
+    <script async src="https://googletagmanager.com"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6RSJQYPBHJ');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المتجر الإلكتروني | مؤسسة محمد خالد للحدادة</title>
+    
+    <!-- محركات البحث Metadata المطابقة لموقعك الفخم -->
+    <meta property="og:title" content="المتجر الإلكتروني - مؤسسة محمد خالد للحدادة – الأفرنجية">
+    <meta property="og:description" content="قطع فريدة وإكسسوارات منزلية مودرن - جودة وثقة وأعمال هندسية بدقة.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="stylesheet" href="https://cloudflare.com">
+    
     <style>
-        :root {
-            --primary-color: #b11e1e; /* الأحمر الفاخر لمؤسستك */
-            --gold-color: #ffcc00;    /* الأصفر الذهبي الفخم لموقعك */
-            --dark-color: #1a1a1a;    /* الخلفية الداكنة لموقعك */
-            --white: #ffffff;
-            --gray: #666;
-            --border-color: #ddd;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f9f9f9;
-            color: #1a1a1a;
+            color: #333;
+            line-height: 1.6;
         }
-
-        /* ترويسة المتجر الفاخرة المطابقة لموقعك الرئيسي والمدونة بالكامل */
-        header {
-            background-color: var(--dark-color);
-            padding: 35px 20px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        /* الشعار الدائري الخاص بمؤسستك في الأعلى */
-        .store-logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-            border-radius: 50%;
-            border: 2px solid var(--gold-color);
-            object-fit: cover;
-        }
-
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 26px;
-            color: var(--gold-color); /* الخط الذهبي المميز لموقعك */
-            font-weight: 700;
-        }
-
-        header .sub-title {
-            margin: 0 0 20px 0;
-            color: #ccc;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-        }
-
-        /* أزرار القائمة الصفراء المطابقة لموقعك مع زر العودة الفخم */
+        
+        /* روابط التنقل الصفراء والمميزة لترويستك الفاخرة */
         .store-nav {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 25px;
         }
-
         .store-nav a {
-            color: var(--gold-color);
+            color: #f0c419; /* نفس الكود الأصفر لترويستك */
             text-decoration: none;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: bold;
+            font-family: 'Tajawal', sans-serif;
             transition: color 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
-
         .store-nav a:hover {
-            color: var(--white);
+            color: #ffffff;
         }
-
-        /* تمييز زر العودة للخلف ليكون واضحاً */
         .store-nav a.btn-back {
-            color: var(--white);
+            color: #ffffff;
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 5px 12px;
+            padding: 5px 15px;
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .store-nav a.btn-back:hover {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            background-color: #b00;
         }
 
-        /* الحاوية الرئيسية وضبط الأبعاد لمنع تزحلق المنتجات */
+        /* تنسيق أقسام المتجر والمنتجات المتناسقة */
         .container {
             max-width: 1200px;
             margin: 40px auto 60px;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-
-        /* تصميم أقسام المتجر */
         .shop-section {
-            background-color: var(--white);
-            border-radius: 8px;
+            background-color: white;
+            border-radius: 10px;
             padding: 25px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-right: 5px solid var(--primary-color);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border-right: 4px solid #b00;
         }
-
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #f4f4f4;
-            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
             margin-bottom: 25px;
         }
-
         .section-header h2 {
             margin: 0;
             font-size: 22px;
-            color: #1a1a1a;
+            color: #b00;
         }
-
         .badge-count {
             background-color: #fff1f1;
-            color: var(--primary-color);
-            padding: 5px 12px;
+            color: #b00;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
         }
-
-        /* شبكة عرض المنتجات */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 30px;
         }
-
-        /* بطاقة المنتج الموزونة الترتيب */
         .product-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
-
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
-
         .product-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: #b00;
+            color: white;
             padding: 4px 10px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 3px;
             z-index: 10;
         }
-
-        /* ضبط حجم إطار الصورة وثبات التكبير التفاعلي وميزة الحجم الكامل */
         .product-image {
             width: 100%;
-            height: 360px; 
-            background-color: #eee;
+            height: 380px; 
+            background-color: #fcfcfc;
             overflow: hidden;
             position: relative;
         }
-
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: contain; /* تظهر كاملة بدون أي قص بناء على طلبك */
-            transition: transform 0.4s ease-in-out;
+            transition: transform 0.4s ease;
         }
-
         .product-card:hover .product-image img {
             transform: scale(1.08); 
         }
-
         .product-info {
             padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-
         .product-title {
             font-size: 17px;
             margin: 0 0 12px 0;
-            color: #1a1a1a;
-            font-weight: bold;
+            color: #111;
+            font-weight: 700;
             line-height: 1.5;
-            text-align: right;
         }
-
         .en-text {
-            display: inline-block;
-            direction: ltr;
             font-family: 'Segoe UI', sans-serif;
             color: #777;
+            font-size: 14px;
         }
-
         .product-meta {
             font-size: 13px;
-            color: var(--gray);
+            color: #666;
             margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            border-top: 1px dashed #eee;
+            padding-top: 12px;
         }
-
+        .product-meta span i {
+            color: #b00;
+            margin-left: 4px;
+        }
         .product-price {
             font-size: 24px;
-            color: var(--primary-color);
-            font-weight: bold;
+            color: #111;
+            font-weight: 800;
             margin-bottom: 20px;
-            text-align: right;
         }
-
         .product-actions {
             margin-top: auto;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 15px;
+            padding: 12px 20px;
             border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
@@ -253,31 +209,27 @@
             border: none;
             gap: 8px;
         }
-
         .btn-primary {
             background-color: #1a1a1a;
-            color: var(--white);
+            color: white;
         }
-
         .btn-primary:hover {
-            background-color: var(--primary-color);
+            background-color: #b00;
         }
-
         .btn-whatsapp {
             background-color: transparent;
             color: #25d366;
-            border: 2px solid #25d366;
+            border: 1.5px solid #25d366;
         }
-
         .btn-whatsapp:hover {
             background-color: #25d366;
-            color: var(--white);
+            color: white;
         }
-
         @media (max-width: 768px) {
             .store-nav {
                 flex-direction: column;
                 gap: 12px;
+                align-items: center;
             }
             .product-grid {
                 grid-template-columns: 1fr;
@@ -287,18 +239,27 @@
 </head>
 <body>
 
-    <!-- الترويسة المدمجة الفاخرة المطابقة لروح موقعك والمدونة بالكامل -->
-    <header>
-        <!-- استدعاء نفس شعارك الرسمي المعتمد -->
-        <img src="logo.jpg" alt="شعار مؤسسة محمد خالد" class="store-logo" onerror="this.style.display='none'">
-        <h1>مؤسسة محمد خالد للحدادة – الأفرنجية</h1>
-        <div class="sub-title">درايبزينات فلل • بوابات حديد فاخرة • أبواب مدنية</div>
+    <!-- الترويسة الفاخرة المنسوخة بدقة مليمترية من موقعك الحقيقي لضمان التطابق المطلق -->
+    <header style="background: linear-gradient(120deg, #1a1a1a 0%, #2c2c2c 50%, #3a3a3a 100%);
+                   color: #f0c419; text-align: center; padding: 50px 15px; font-family: 'Tajawal', sans-serif;
+                   border-bottom: 3px solid #b00; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         
-        <!-- روابط التنقل والرجوع السلس للخلف -->
+        <!-- استدعاء الشعار المعتمد الأصلي -->
+        <div style="margin-bottom: 16px;">
+            <img src="logo.png" alt="شعار مؤسسة محمد خالد للحدادة" style="height: 80px; width: auto; object-fit: contain;">
+        </div>
+        
+        <h1 style="font-weight: 800; font-size: 2.1em; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
+            مؤسسة محمد خالد للحدادة – الأفرنجية
+        </h1>
+        
+        <p style="font-size: 1.1em; margin-top: 12px; color: #e6e6e6;">المتجر الإلكتروني الرسمي - قطع حصرية صُنعت هندسياً لتدوم لعقود</p>
+        
+        <!-- شريط الأزرار المطور لربط المتجر بالصفحة الرئيسية والمدونة -->
         <div class="store-nav">
             <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-right"></i> العودة للموقع الرئيسي وحاسبة الأوزان</a>
             <a href="index.html#blog"><i class="fa-solid fa-newspaper"></i> المدونة التقنية</a>
-            <a href="shop.html" style="border-bottom: 2px solid var(--gold-color); padding-bottom: 2px;"><i class="fa-solid fa-store"></i> المتجر الإلكتروني</a>
+            <a href="shop.html" style="border-bottom: 2px solid #f0c419; padding-bottom: 2px;"><i class="fa-solid fa-store"></i> المتجر الإلكتروني</a>
         </div>
     </header>
 
