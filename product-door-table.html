@@ -46,23 +46,22 @@
             margin-bottom: 30px;
         }
         
-        /* --- تأثير الزوم العملاق المحترف للصورة --- */
+        /* --- تنسيق حاوية الصورة لتأثير الزوم المتحرك --- */
         .product-gallery {
             flex: 1;
             text-align: center;
-            overflow: hidden; /* يمنع الصورة من الخروج خارج الإطار عند التكبير */
+            overflow: hidden; 
             border-radius: 6px;
             background: #fff;
+            position: relative;
         }
         .product-gallery img {
             max-width: 100%;
             height: auto;
             border-radius: 6px;
-            transition: transform 0.5s ease; /* سرعة ونعومة حركة الزوم */
-            cursor: zoom-in; /* يغير شكل الماوس لعدسة مكبرة */
-        }
-        .product-gallery:hover img {
-            transform: scale(1.3); /* نسبة التكبير العملاقة (يمكنك زيادتها لـ 1.4 إذا أردت زوم أكبر) */
+            transform-origin: center center; /* نقطة بداية التكبير */
+            transition: transform 0.1s ease-out; /* حركة ناعمة تتبع الماوس دون تأخير */
+            cursor: zoom-in;
         }
         /* ------------------------------------------- */
 
@@ -164,8 +163,9 @@
     </div>
 
     <div class="product-main">
-        <div class="product-gallery">
-            <img src="villa-security-door.webp" alt="باب حديد أمان مصفح">
+        <!-- أضفنا معرف id لملاحقة حركة الماوس برمجياً -->
+        <div class="product-gallery" id="zoomContainer">
+            <img src="villa-security-door.webp" id="zoomImage" alt="باب حديد أمان مصفح">
         </div>
         
         <div class="product-details">
@@ -188,9 +188,9 @@
                 <div class="price-value">$ 250</div>
             </div>
             
-            <a href="https://wa.me/963945509412" target="_blank" class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> اطلب الآن عبر واتساب ومباشرة من المعمل
-                    </a>
+            <a href="https://wa.meً/963945509412" target="_blank" class="order-btn">
+                اطلب الآن عبر واتساب ومباشرة من المعمل
+            </a>
         </div>
     </div>
 
@@ -226,6 +226,30 @@
         </table>
     </div>
 </div>
+
+<!-- كود الـ JavaScript المسؤول عن جعل التكبير يلحق مكان مؤشر الماوس بدقة -->
+<script>
+    const container = document.getElementById('zoomContainer');
+    const img = document.getElementById('zoomImage');
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        
+        // حساب مكان الماوس بالنسبة المئوية داخل مربع الصورة
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        // تركيز الزوم وتكبير الصورة عند مكان الماوس بالضبط
+        img.style.transformOrigin = `${x}% ${y}%`;
+        img.style.transform = 'scale(2)'; /* نسبة التكبير (2 تعني الضعف لتوضيح التفاصيل تماماً) */
+    });
+
+    // إرجاع الصورة لوضعها الطبيعي بمجرد خروج الماوس من مربع الصورة
+    container.addEventListener('mouseleave', () => {
+        img.style.transformOrigin = 'center center';
+        img.style.transform = 'scale(1)';
+    });
+</script>
 
 </body>
 </html>
