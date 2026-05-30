@@ -9,10 +9,10 @@
         :root {
             --primary-color: #b11e1e; /* الأحمر الفاخر لمؤسستك */
             --dark-color: #111111;
-            --light-bg: #f4f4f4;
+            --light-bg: #f8f9fa;
             --white: #ffffff;
-            --gray: #555;
-            --border-color: #eaeaea;
+            --gray: #666;
+            --border-color: #eef0f2;
         }
 
         body {
@@ -24,7 +24,7 @@
             color: var(--dark-color);
         }
 
-        /* شريط الترويسة العلوي الاحترافي - يدمج الاسم مع زر الرجوع */
+        /* شريط الترويسة العلوي المتناسق */
         .main-navbar {
             background-color: var(--white);
             border-bottom: 1px solid var(--border-color);
@@ -35,21 +35,19 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .navbar-brand {
             font-size: 22px;
             font-weight: 800;
-            color: var(--dark-color);
-            letter-spacing: 0.5px;
-        }
-
-        .navbar-brand span {
             color: var(--primary-color);
         }
 
-        /* زر الرجوع للموقع الرئيسي في أعلى الصفحة */
+        .navbar-brand span {
+            color: var(--dark-color);
+        }
+
         .btn-back-home {
             background-color: var(--dark-color);
             color: var(--white);
@@ -58,7 +56,7 @@
             text-decoration: none;
             font-size: 14px;
             font-weight: bold;
-            transition: all 0.3s ease;
+            transition: background 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -68,19 +66,18 @@
             background-color: var(--primary-color);
         }
 
-        /* عنوان المتجر الفخم في منتصف الصفحة */
+        /* عنوان المتجر */
         .store-hero {
             text-align: center;
-            padding: 50px 20px 30px;
+            padding: 40px 20px;
             background-color: var(--white);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border-bottom: 1px solid var(--border-color);
         }
 
         .store-hero h1 {
             font-size: 32px;
             margin: 0 0 10px 0;
-            color: var(--dark-color);
             font-weight: 700;
         }
 
@@ -96,62 +93,63 @@
             padding: 0 20px;
         }
 
-        /* تصميم الأقسام المودرن المتناسقة */
+        /* تصميم الأقسام المودرن */
         .shop-section {
             background-color: var(--white);
             border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border-top: 3px solid var(--primary-color);
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            border-right: 4px solid var(--primary-color);
         }
 
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .section-header h2 {
             margin: 0;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            color: var(--dark-color);
         }
 
         .badge-count {
             background-color: #fff1f1;
             color: var(--primary-color);
-            padding: 6px 14px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: bold;
         }
 
+        /* شبكة عرض المنتجات الصارمة لمنع التمدد المشوه */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        /* بطاقة المنتج العالمية الفاخرة */
+        /* بطاقة المنتج الفاخرة الموزونة الترتيب */
         .product-card {
             background-color: var(--white);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
 
         .product-badge {
@@ -160,63 +158,62 @@
             right: 15px;
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 5px 12px;
+            padding: 4px 10px;
             font-size: 11px;
             font-weight: bold;
             border-radius: 3px;
             z-index: 10;
-            text-transform: uppercase;
         }
 
+        /* ضبط حجم إطار الصورة بدقة وتثبيت حركية التكبير التفاعلي */
         .product-image {
             width: 100%;
-            height: 360px; 
+            height: 380px; 
             background-color: #fcfcfc;
             overflow: hidden;
             position: relative;
-            border-bottom: 1px solid var(--border-color);
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 0.5s ease;
         }
 
         .product-card:hover .product-image img {
             transform: scale(1.08); 
         }
 
+        /* ترتيب النصوص والأزرار أسفل الصورة بتناسق تام */
         .product-info {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            background-color: var(--white);
         }
 
         .product-title {
-            font-size: 18px;
+            font-size: 17px;
             margin: 0 0 12px 0;
             color: var(--dark-color);
             font-weight: 700;
-            line-height: 1.4;
-            text-align: justify;
+            line-height: 1.5;
         }
 
         .en-text {
             font-family: 'Segoe UI', sans-serif;
             color: #888;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* شارات الجودة تحت المنتج مباشرة بتناسق تام */
         .product-meta {
             font-size: 13px;
-            color: #777;
-            margin-bottom: 20px;
+            color: #666;
+            margin-bottom: 15px;
             display: flex;
-            gap: 15px;
+            justify-content: space-between;
             border-top: 1px dashed var(--border-color);
             padding-top: 12px;
         }
@@ -227,13 +224,10 @@
         }
 
         .product-price {
-            font-size: 26px;
+            font-size: 24px;
             color: var(--dark-color);
             font-weight: 800;
             margin-bottom: 20px;
-            display: flex;
-            align-items: baseline;
-            gap: 5px;
         }
 
         .product-price span {
@@ -242,23 +236,24 @@
             font-weight: normal;
         }
 
+        /* أزرار واضحة وغير مهملة */
         .product-actions {
             margin-top: auto;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 20px;
+            padding: 12px 20px;
             border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: background 0.2s, color 0.2s;
             cursor: pointer;
             border: none;
             gap: 8px;
@@ -267,7 +262,6 @@
         .btn-primary {
             background-color: var(--dark-color);
             color: var(--white);
-            letter-spacing: 0.5px;
         }
 
         .btn-primary:hover {
@@ -290,7 +284,6 @@
                 padding: 15px 20px;
                 flex-direction: column;
                 gap: 15px;
-                text-align: center;
             }
             .product-grid {
                 grid-template-columns: 1fr;
@@ -300,13 +293,12 @@
 </head>
 <body>
 
-    <!-- الترويسة الاحترافية الجديدة المدمج بها زر العودة للموقع الرئيسي بشكل بارز -->
+    <!-- الترويسة العلوية الثابتة والمنظمة -->
     <nav class="main-navbar">
         <div class="navbar-brand">مؤسسة محمد خالد للحدادة <span>الأفرنجية</span></div>
         <a href="index.html" class="btn-back-home"><i class="fa-solid fa-arrow-right"></i> العودة للموقع الرئيسي وحاسبة الأوزان</a>
     </nav>
 
-    <!-- واجهة الترحيب وعنوان المتجر المنسق -->
     <div class="store-hero">
         <h1>المتجر الإلكتروني الرسمي</h1>
         <p>تصاميم فخمة وحصرية صُنعت هندسياً لتدوم لعقود</p>
@@ -314,7 +306,7 @@
 
     <div class="container">
 
-        <!-- ================= القسم الأول: الأثاث المودرن والبار ================= -->
+        <!-- ================= القسم الأول: الأثاث Mودرن والبار ================= -->
         <section class="shop-section">
             <div class="section-header">
                 <h2><i class="fa-solid fa-chair"></i> قسم الأثاث المودرن والبار</h2>
@@ -322,6 +314,7 @@
             </div>
             <div class="product-grid">
                 
+                <!-- بطاقة المنتج المحمية من التمدد العشوائي والمكتملة العناصر -->
                 <div class="product-card">
                     <div class="product-badge">تصميم خاص</div>
                     <div class="product-image">
@@ -333,6 +326,11 @@
                             <span class="en-text">(Room Divider)</span>
                         </h3>
                         
-                        <!-- علامات الجودة والضمان في مكانها المنسق والأنيق تحت الاسم مباشرة -->
                         <div class="product-meta">
                             <span><i class="fa-solid fa-weight-hanging"></i> الوزن: 24 كغ</span>
+                            <span><i class="fa-solid fa-shield-halved"></i> كفالة سنتين ضد الصدأ</span>
+                        </div>
+                        
+                        <div class="product-price">2,500,000 <span>ل.س</span></div>
+                        
+                        <div class="product-actions">
