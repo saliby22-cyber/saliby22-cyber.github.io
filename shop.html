@@ -121,10 +121,12 @@
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             display: flex;
-            flex-direction: column;
-            min-height: 580px; /* تحديد حد أدنى للارتفاع يضمن استيعاب كل العناصر */
-        }
-        .product-card:hover {
+             flex-direction: column;
+             min-height: 580px; /* تحديد حد أدنى للارتفاع يضمن استيعاب كل العناصر */
+             max-width: 340px;
+             margin: 0 auto;
+         }
+         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
