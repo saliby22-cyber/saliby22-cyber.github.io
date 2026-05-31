@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <!-- 1. الصفحة الرئيسية للموقع -->
+  <url>
+    <loc>https://github.io</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- 2. صفحة المتجر الإلكتروني الرئيسي -->
+  <url>
+    <loc>https://github.ioshop.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- 3. صفحة البوابات الكبيرة (من لقطة الشاشة 4) -->
+  <url>
+    <loc>https://github.iogates.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- 4. صفحة الدرابزينات الفعالة (من لقطة الشاشة 1) -->
+  <url>
+    <loc>https://github.iodarabeen.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- 5. صفحة حدائق وديكور خارجي (من لقطة الشاشة 3) -->
+  <url>
+    <loc>https://github.iogarden.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- 6. صفحة البيرغولا والمظلات الحديدية (من لقطة الشاشة 6) -->
+  <url>
+    <loc>https://github.iopergola.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- 7. صفحة حاسبة الأوزان والهندسة والتكاليف (من لقطة الشاشة 2) -->
+  <url>
+    <loc>https://github.ioengineering.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- 8. صفحة المدونة الرئيسية (من لقطة الشاشة 1) -->
+  <url>
+    <loc>https://github.ioblog.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- 9. المقالات المخصصة داخل المدونة (من لقطة الشاشة 1) -->
+  <url><loc>https://github.ioarticle-stair.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioarticle-lgs.html</loc><priority>0.8</priority></url>
+  <!-- 10. منتجات المعمل والورشة التفصيلية (من لقطة الشاشة 7) -->
+  <url><loc>https://github.ioproduct-hydrant-table.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-divider.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-bar-table.html</loc><priority>0.8</priority></url>
+  <!-- 11. صفحات ميزات الأبواب المودرن والفاخرة والعازلة للصوت (من لقطة الشاشة 7) -->
+  <url><loc>https://github.ioproduct-door-table.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-modern-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-geometric-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-classic-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-white-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-green-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-arc-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-blue-insulated-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-wave-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-diamond-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-laser-door.html</loc><priority>0.8</priority></url>
+  <url><loc>https://github.ioproduct-greek-door.html</loc><priority>0.8</priority></url>
+</urlset>
