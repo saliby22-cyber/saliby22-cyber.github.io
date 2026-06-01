@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# رابط خريطة الموقع لمؤسسة محمد خالد للحدادة
+Sitemap:https://saliby22-cyber.github.io/sitemap.xml
