@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قاعدة طاولة هندسية متداخلة فاخرة - مؤسسة محمد خالد</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --primary-color: #b11e1e;
+            --dark-color: #1a1a1a;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0; background-color: var(--light-bg); color: var(--dark-color); line-height: 1.8;
+        }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .back-to-shop { margin-bottom: 25px; }
+        .back-to-shop a { color: #555; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; transition: color 0.3s; }
+        .back-to-shop a:hover { color: var(--primary-color); }
+        
+        .product-container { display: flex; gap: 40px; background-color: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .product-right-side { flex: 1; max-width: 50%; }
+        
+        .main-image-wrapper { width: 100%; border-radius: 8px; overflow: hidden; background-color: #f5f5f5; position: relative; }
+        .main-image-wrapper img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.1s ease-out; cursor: zoom-in; }
+        
+        .product-left-side { flex: 1; display: flex; flex-direction: column; }
+        .product-title { font-size: 28px; margin: 0; color: var(--dark-color); border-bottom: 2px solid var(--light-bg); padding-bottom: 15px; font-weight: bold; }
+        
+        .badge-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
+        .custom-badge { background-color: #e8f5e9; color: #2e7d32; padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: bold; display: inline-flex; align-items: center; gap: 6px; }
+        .custom-badge.shield { background-color: #fff3e0; color: #e65100; }
+        
+        .product-story { background-color: #fbfbfb; border-right: 4px solid var(--primary-color); padding: 20px; color: #222; font-size: 17px; margin-top: 25px; text-align: justify; }
+        .price-box { background-color: var(--light-bg); padding: 20px; border-radius: 6px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 5px; margin-top: 25px; }
+        .price-label { font-size: 14px; color: #666; }
+        .product-price { font-size: 32px; color: var(--primary-color); font-weight: 800; }
+        
+        .btn-whatsapp { display: block; background-color: #25d366; color: var(--white); text-align: center; padding: 15px 25px; border-radius: 6px; font-size: 18px; font-weight: bold; text-decoration: none; margin-top: 25px; transition: background-color 0.3s; }
+        .btn-whatsapp:hover { background-color: #1eb858; }
+        .btn-whatsapp i { margin-left: 8px; font-size: 20px; vertical-align: middle; }
+
+        .specs-section { background-color: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .specs-section h2 { font-size: 22px; color: var(--dark-color); margin-bottom: 20px; border-bottom: 2px solid var(--light-bg); padding-bottom: 10px; display: inline-block; }
+        .specs-table { width: 100%; border-collapse: collapse; }
+        .specs-table td { padding: 14px; border-bottom: 1px solid var(--border-color); font-size: 15px; }
+        .specs-table tr:nth-child(even) { background-color: var(--light-bg); }
+        .specs-label { font-weight: bold; color: var(--dark-color); width: 30%; }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .container { padding: 0 10px; margin: 15px auto; }
+            .product-container { flex-direction: column; padding: 20px; gap: 25px; }
+            .product-right-side, .product-left-side { max-width: 100%; flex: none; width: 100%; }
+            .main-image-wrapper img { max-width: 300px; margin: 0 auto; }
+            .product-title { font-size: 22px; text-align: center; }
+            .badge-row { justify-content: center; }
+            .product-story { font-size: 15px; padding: 15px; }
+            .specs-label { width: 40%; font-size: 14px; }
+            .specs-table td { padding: 10px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="back-to-shop">
+            <a href="shop.html"><i class="fa-solid fa-arrow-right"></i> العودة إلى المتجر الرئيسي</a>
+        </div>
+
+        <div class="product-container">
+            <div class="product-right-side">
+                <div class="main-image-wrapper" id="zoom-image">
+                    <img src="geometric-table-base.webp" alt="قاعدة طاولة هندسية متداخلة فاخرة">
+                </div>
+            </div>
+
+            <div class="product-left-side">
+                <h1 class="product-title">قاعدة طاولة مكاتب وسفرة هندسية متداخلة (Geometric Interlocking Base)</h1>
+                <div class="badge-row">
+                    <span class="custom-badge"><i class="fa-solid fa-vector-square"></i> زوايا قطع 45 درجة دقيقة</span>
+                    <span class="custom-badge shield"><i class="fa-solid fa-dumbbell"></i> حديد ثقيل سماكة 2.5 ملم</span>
+                    <span class="custom-badge shield"><i class="fa-solid fa-infinity"></i> لحام مخفي ومجلي بالكامل</span>
+                </div>
+
+                <div class="product-story">
+                    الخيار الأرقى للمكاتب الهندسية الكبرى وقاعات الطعام الفاخرة. تتميز هذه القاعدة الفولاذية بهيكلية متداخلة ومتقاطعة بشكل هندسي مبهر يوفر توازناً مطلقاً وثباتاً متزناً على الأرضيات. تم تصنيعها في ورشاتنا باستخدام حديد مفرغ عالي الكثافة وسماكة 2.5 ملم لضمان قدرة تحميل أوزان فائقة الثقل كالرخام الطبيعي أو الزجاج السميك، وتتم معالجة كافة نقاط الالتقاء بجلي احترافي مخفي يجعل الهيكل يبدو كقطعة فنية انسيابية واحدة مدهونة حرارياً بفرن مضاد تماماً للتآكل والرطوبة.
+                </div>
+
+                <div class="price-box">
+                    <div class="price-label">السعر الحالي للقاعدة الفولاذية المصنعة:</div>
+                    <div class="product-price">$ 165</div>
+                </div>
+
+                <a href="#" onclick="this.href='https://wa.me/963945509412?text=' + encodeURIComponent('مرحباً مؤسسة محمد خالد للحدادة، أرغب في طلب قاعدة الطاولة الهندسية المتداخلة الفاخرة:\n\n*المنتج:* قاعدة طاولة مكاتب وسفرة هندسية متداخلة\n*الرابط:* ' + window.location.href)" target="_blank" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الآن عبر واتساب ومباشرة من المعمل
+                </a>
+            </div>
+        </div>
+
+        <div class="specs-section">
+            <h2>المواصفات الفنية والهندسية للقاعدة</h2>
+            <table class="specs-table">
+                <tr>
+                    <td class="specs-label">نوع الهندسة والتقاطع</td>
+                    <td>تصميم مودرن متداخل (Geometric Interlocking) مستوحى من الأنماط المعمارية العصرية للمكاتب والفلل</td>
+                </tr>
+                <tr>
+                    <td class="specs-label">بنية ومتانة الحديد</td>
+                    <td>حديد أسود مفرغ صلب سماكة 2.5 ملم حقيقية مع معالجة اللحام الجلفاني المخفي الناعم بالكامل</td>
+                </tr>
+                <tr>
+                    <td class="specs-label">تقنية الطلاء والحماية</td>
+                    <td>مطلية حرارياً بطلاء فرن إلكتروستاتيك ناعم عازل ومقاوم للخدوش والمياه والمنظفات الكيميائية للأرضيات</td>
+                </tr>
+                <tr>
+                    <td class="specs-label">القياسات والأبعاد القياسية</td>
+                    <td>الطول: 140 سم | العرض: 70 سم | الارتفاع: 75 سم (الارتفاع الهندسي القياسي والمريح جداً لكراسي السفرة والمكاتب)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('zoom-image');
+        const img = container.querySelector('img');
+        
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.transform = 'scale(2)';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            img.style.transformOrigin = 'center center';
+            img.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
