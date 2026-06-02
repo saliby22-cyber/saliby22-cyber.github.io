@@ -3,80 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- تحسينات السيو لـ Google Search Console -->
     <title>بوابة القصور الملكية المودرن باللون الأسود والذهبي | مؤسسة محمد خالد للحدادة</title>
     <meta name="description" content="اكتشف الفخامة والأمان مع بوابة القصور والفلل المودرن من مؤسسة محمد خالد. حديد أفرنجي ثقيل، دهان حراري مقاوم للرطوبة، وجاهزية كاملة للربط مع المحركات الكهربائية الذكية.">
+    
+    <!-- تضمين أيقونات FontAwesome والمكتبة الخاصة بالزووم المتحرك -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fcfcfc; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .product-header { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
-        .product-image { flex: 1; min-width: 300px; max-width: 550px; }
-        .product-image img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        
+        /* تنسيق رابط العودة في الأعلى */
+        .top-nav { text-align: left; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .top-nav a { text-decoration: none; color: #666; font-size: 14px; font-weight: bold; transition: 0.3s; }
+        .top-nav a:hover { color: #b11e1e; }
+
+        .product-header { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+        
+        /* تنسيق حاوية الصورة وخاصية الزووم العملاق */
+        .product-image-container { flex: 1; min-width: 300px; max-width: 550px; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); cursor: zoom-in; }
+        .product-image-container img { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: transform 0.1s ease-out; }
+        
         .product-info { flex: 1; min-width: 300px; }
-        h1 { color: #111; font-size: 2rem; margin-top: 0; }
-        .price { font-size: 1.8rem; color: #b12704; font-weight: bold; margin: 20px 0; display: block; }
-        .badge { background: #232f3e; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; display: inline-block; margin-bottom: 15px; }
-        .section-title { border-right: 4px solid #232f3e; padding-right: 10px; color: #232f3e; margin-top: 30px; }
+        h1 { color: #111; font-size: 2rem; margin-top: 0; line-height: 1.4; }
+        
+        /* تنسيق الشارات المميزة ومربع السعر */
+        .badge-container { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .badge { background: #fdf2f2; color: #b11e1e; border: 1px solid #f5c2c2; padding: 6px 15px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .badge.dark { background: #37474f; color: #fff; border: none; }
+        
+        .price-card { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 20px; margin: 25px 0; text-align: center; }
+        .price-label { font-size: 14px; color: #666; display: block; margin-bottom: 5px; }
+        .price-value { font-size: 2.2rem; color: #b11e1e; font-weight: 800; }
+        
+        /* تنسيق زر الواتساب العريض المماثل للأولى */
+        .btn-whatsapp-large { display: block; width: 100%; background-color: #2ecc71; color: white; text-align: center; padding: 15px 0; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2); transition: 0.3s; border: none; cursor: pointer; }
+        .btn-whatsapp-large:hover { background-color: #27ae60; transform: translateY(-2px); }
+        
+        .section-title { border-right: 4px solid #b11e1e; padding-right: 10px; color: #111; margin-top: 40px; font-size: 1.4rem; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         table, th, td { border: 1px solid #e0e0e0; }
         th, td { padding: 12px; text-align: right; }
-        th { background-color: #f9f9f9; width: 30%; }
-        .cta-button { display: inline-block; background-color: #ff9900; color: #111; padding: 15px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; text-align: center; margin-top: 20px; transition: 0.3s; }
-        .cta-button:hover { background-color: #e68a00; }
+        th { background-color: #f9f9f9; width: 30%; color: #555; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- القسم العلوي: الصورة والبيانات الأساسية -->
+    <!-- 1️⃣ زر العودة إلى المتجر الرئيسي في الأعلى -->
+    <div class="top-nav">
+        <a href="shop.html"><i class="fa-solid fa-arrow-right"></i> العودة إلى المتجر الرئيسي</a>
+    </div>
+
     <div class="product-header">
-        <div class="product-image">
-            <!-- كرت العرض المربع المجهز للذكاء التسوقي 1200x1200px -->
-            <img src="royal-gold-gate.webp" alt="بوابة القصور الملكية المودرن المزخرفة بالذهبي من حدادة محمد خالد" loading="lazy">
+        <!-- 3️⃣ حاوية الصورة المجهزة برمجياً للزووم العملاق مع حركة الماوس -->
+        <div class="product-image-container" id="zoom-container">
+            <img src="royal-gold-gate.webp" id="zoom-image" alt="بوابة القصور الملكية المودرن المزخرفة بالذهبي من حدادة محمد خالد">
         </div>
         
         <div class="product-info">
-            <span class="badge">قسم البوابات الرئيسية الكبيرة</span>
-            <h1>بوابة القصور الملكية المودرن المزخرفة بالذهبي</h1>
-            <span class="price">$2,450 <small style="font-size: 0.9rem; color: #666; font-weight: normal;">(السعر يشمل الهيكل وتجهيز الأتمتة)</small></span>
+            <h1>بوابة القصور الملكية المودرن المزخرفة بالذهبي - حديد أفرنجي ثقيل</h1>
             
-            <p><strong>فخامة التصميم المتكامل وأعلى مستويات الأمان:</strong> تم تصميم هذه البوابة الملكية خصيصاً لأصحاب الذوق الرفيع من مالكي القصور والفلل الحديثة. تجمع البوابة بين صلابة الحديد الأفرنجي المشغول بدقة، وبين الانسيابية المودرن من خلال الشرائح الطولية المحجوبة التي توفر خصوصية تامة لعائلتك مع الحفاظ على مظهر خارجي مهيب يسر الناظرين.</p>
+            <div class="badge-container">
+                <span class="badge">حديد أفرنجي ثقيل</span>
+                <span class="badge">تطعيم ذهبي أنتيك</span>
+                <span class="badge dark">جاهزة للأتمتة والتحكم عن بعد</span>
+            </div>
             
-            <a href="https://wa.me/963945509412?text=" class="cta-button">طلب تسعير مخصص وتفاصيل التركيب</a>
+            <p style="color: #555; font-size: 1.05rem; text-align: justify;"><strong>الحصن المنيع والواجهة الملكية لفيلاك أو قصرك:</strong> تم تصميم هذه البوابة الملكية الفاخرة وتصنيعها في ورشتنا بأعلى معايير الأمان الإنشائي والحدادة الأفرنجية. تجمع البوابة بين الصلابة العالية وهيبة اللون الأسود الملكي المطفي المدمج بتفاصيل ذهبية فاخرة، مع لوحة فنية خطية دائرية مفرغة تحمل عبارة (ما شاء الله) لتمنح مدخل بيتك بركة وهيبة عصرية فريدة تسر الناظرين وتوفر خصوصية تامة لعائلتك.</p>
+            
+            <div class="price-card">
+                <span class="price-label">السعر الحالي للبوابة الحديدية بالكامل (بدون الموتور):</span>
+                <span class="price-value">2,450 $</span>
+            </div>
+            
+            <!-- 2️⃣ زر الواتساب العريض الذكي الذي يفتح في صفحة منفصلة ويحمل الرابط تلقائياً -->
+            <a href="#" target="_blank" class="btn-whatsapp-large" onclick="this.href='https://wa.me/963945509412?text=' + encodeURIComponent('مرحبًا مؤسسة محمد خالد للحدادة، أرغب في طلب مباشر ومناقشة أبعاد التركيب لبوابة القصور الملكية المودرن ورابطها هو: ') + encodeURIComponent(window.location.href)">
+                <i class="fa-brands fa-whatsapp"></i> طلب مباشر ومناقشة أبعاد التركيب عبر واتساب
+            </a>
         </div>
     </div>
 
-    <!-- جدول المواصفات الفنية والهيكلية -->
-    <h3 class="section-title">⚙️ المواصفات الفنية والهيكلية</h3>
+    <h3 class="section-title">المواصفات الفنية والهندسية للبوابة</h3>
     <table>
         <tr>
-            <th>نوع الحديد</th>
-            <td>حديد أفرنجي ثقيل معزز ومقاوم للأحمال العالية والرياح.</td>
+            <th>نوع الهيكل والخامات</th>
+            <td>حديد أفرنجي ثقيل معزز وجسور سميكة لمقاومة الرياح والأحمال العالية.</td>
         </tr>
         <tr>
-            <th>نوع الدهان</th>
-            <td>دهان حراري أسود ملكي (Matte Black) مقاوم للرطوبة والصدأ مع تطعيم ذهبي أنتيك (Antique Gold).</td>
+            <th>نوع الدهان والمعالجة</th>
+            <td>دهان حراري أسود ملكي (Matte Black) مقاوم للرطوبة والصدأ مع تطعيم ذهبي أنتيك فاخر.</td>
         </tr>
         <tr>
-            <th>النقش المركزي</th>
-            <td>لوحة فنية خطية دائرية مفرغة تحمل عبارة (ما شاء الله) لمدخل متميز ومهيب.</td>
+            <th>الأتمتة والتحكم الذكي</th>
+            <td>مهيأة ومجهزة داخلياً بمسارات مخفية لتركيب محركات سحاب كهربائية إيطالية (Nice / Came).</td>
         </tr>
         <tr>
-            <th>الخصوصية</th>
-            <td>شرائح طولية متراصة ومحجوبة تمنع الرؤية وتسمح بمرور انسيابي للضوء والهواء.</td>
+            <th>ميزات الأمان الرقمي</th>
+            <td>تدعم الربط التام مع الحساسات الضوئية لمنع الحوادث، الإنتركم المرئي، وكاميرات المراقبة.</td>
         </tr>
     </table>
-
-    <!-- قسم الأتمتة والمحركات الكهربائية الذكية -->
-    <h3 class="section-title">🔌 الجاهزية الذكية وأنظمة التحكم الكهربائي (Smart Automation)</h3>
-    <p>البوابة مصممة ومجهزة داخلياً في مصانعنا لتتوافق مع أحدث أنظمة الأتمتة المنزلية، وتدعم الميزات التالية عند طلب التركيب:</p>
-    <ul>
-        <li><strong>التوافق مع المحركات الإيطالية:</strong> هيكل البوابة مجهز بمسارات مخفية مسبقاً لتركيب محركات سحاب كهربائية فائقة التحمل (مثل ماركات Nice أو Came العالمية).</li>
-        <li><strong>التحكم عن بُعد والواي فاي (Wi-Fi):</strong> إمكانية فتح وإغلاق البوابة عبر ريموت كنترول بعيد المدى، أو ربطها بالهاتف الذكي للتحكم بها بلمسة واحدة من أي مكان.</li>
-        <li><strong>أنظمة الأمان الذكية:</strong> مهيأة لتركيب الحساسات الضوئية (Photocells) لإيقاف الحركة فوراً في حال مرور سيارة أو شخص منعاً للحوادث، مع إمكانية الربط مع الإنتركم المرئي وكاميرات المراقبة.</li>
-    </ul>
 </div>
+
+<!-- كود الجافا سكريبت الخاص بتفعيل الزووم العملاق المتحرك مع الماوس -->
+<script>
+    const container = document.getElementById('zoom-container');
+    const image = document.getElementById('zoom-image');
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const xPercent = (x / rect.width) * 100;
+        const yPercent = (y / rect.height) * 100;
+        
+        image.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+        image.style.transform = 'scale(2.5)'; // نسبة التكبير العملاق
+    });
+
+    container.addEventListener('mouseleave', () => {
+        image.style.transformOrigin = 'center center';
+        image.style.transform = 'scale(1)';
+    });
+</script>
 
 </body>
 </html>
