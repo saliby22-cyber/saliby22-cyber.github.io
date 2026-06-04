@@ -3,143 +3,147 @@
 
   <!-- 1. الصفحات والخدمات الرئيسية في الموقع -->
   <url>
-    <loc>https://saliby22-cyber.github.io/index.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/shop.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/darabeen.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/gates.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/garden.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/pergola.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/engineering.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/blog.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
 
   <!-- 2. المقالات المخصصة داخل المدونة -->
   <url>
-    <loc>https://saliby22-cyber.github.io/article-stair.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/article-lgs.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
 
   <!-- 3. منتجات المعمل والورشة القديمة -->
   <url>
-    <loc>https://saliby22-cyber.github.io/product-hydrant-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-divider.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-bar-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
 
   <!-- 4. صفحات أبواب الأمان والفلل العازلة للصوت والضوضاء -->
   <url>
-    <loc>https://saliby22-cyber.github.io/product-door-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-modern-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-geometric-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-classic-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-white-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-green-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-arc-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-blue-insulated-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-wave-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-diamond-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-laser-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-greek-door.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- 5. صفحات المنتجات السبعة الجديدة التي أضفناهما معاً اليوم بنجاح -->
+  <!-- 5. صفحات المنتجات الجديدة للأثاث المودرن والرفوف وبوابة الفلل -->
   <url>
-    <loc>https://saliby22-cyber.github.io/product-wood-shelf.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-oval-shelf.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-zigzag-shelf.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-cube-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-shoe-rack.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-twisted-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-geometric-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saliby22-cyber.github.io/product-bolt-table.html</loc>
+    <loc>https://saliby-metal.com</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://saliby-metal.com</loc>
     <priority>0.8</priority>
   </url>
 
