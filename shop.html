@@ -304,61 +304,59 @@
     </header>
 
     <div class="container">
-        <!-- حاوية التحكم الذكية: تفصل التصفح بين الجوال والكمبيوتر تلقائياً -->
-<div class="smart-store-filter" style="max-width: 1200px; margin: 25px auto; padding: 0 15px; font-family: sans-serif;">
+          <!-- ================= بداية نظام تصفية المتجر الذكي المطور (الهجين) ================= -->
+    <div class="smart-store-filter" style="max-width: 1200px; margin: 25px auto; padding: 0 15px; font-family: 'Tajawal', sans-serif;">
 
-    <!-- 📱 الجزء الخاص بالجوال فقط (يختفي على الكمبيوتر تلقائياً) -->
-    <div class="mobile-only-filter" style="text-align: center; margin-bottom: 20px;">
-        <label for="category-select" style="display: block; font-weight: bold; margin-bottom: 8px; color: #333; font-size: 15px;">اختر القسم لمتصفح سريع على الجوال:</label>
-        <select id="category-select" onchange="filterCategoryMobile(this.value)" style="width: 100%; max-width: 320px; padding: 12px; font-size: 16px; font-weight: bold; color: #fff; background-color: #b11e1e; border: none; border-radius: 6px; cursor: pointer; outline: none; box-shadow: 0 4px 10px rgba(177, 30, 30, 0.15);">
-            <option value="all">عرض كل الأقسام والمنتجات</option>
-            <option value="gates-section">🚪 قسم البوابات الرئيسية الكبرى</option>
-            <option value="doors-section">🔑 قسم أبواب الأمان والشقق</option>
-            <option value="tables-section">🪑 قسم الطاولات والأثاث والرفوف</option>
-        </select>
+        <!-- 📱 الجزء الخاص بالجوال فقط (منسدلة حمراء أنيقة بـ 4 أقسام كاملة) -->
+        <div class="mobile-only-filter" style="text-align: center; margin-bottom: 20px; display: none;">
+            <label for="category-select" style="display: block; font-weight: bold; margin-bottom: 8px; color: #333; font-size: 15px;">اختر القسم لمتصفح سريع على الجوال:</label>
+            <select id="category-select" onchange="filterCategoryMobile(this.value)" style="width: 100%; max-width: 320px; padding: 12px; font-size: 16px; font-weight: bold; color: #fff; background-color: #b11e1e; border: none; border-radius: 6px; cursor: pointer; outline: none; box-shadow: 0 4px 10px rgba(177, 30, 30, 0.15); font-family: 'Tajawal', sans-serif;">
+                <option value="all" style="color: #333;">عرض كل الأقسام والمنتجات</option>
+                <option value="gates-section" style="color: #333;">🚪 قسم البوابات الرئيسية الكبرى</option>
+                <option value="doors-section" style="color: #333;">🔑 قسم أبواب الأمان والشقق</option>
+                <option value="tables-section" style="color: #333;">🪑 قسم الطاولات والأثاث والرفوف</option>
+                <option value="garden-section" style="color: #333;">🌳 قسم ديكورات الحدائق والخيم</option>
+            </select>
+        </div>
+
+        <!-- 💻 الجزء الخاص بالكمبيوتر فقط (4 لوحات مربعة فاخرة ذكية التبديل) -->
+        <div class="desktop-only-filter" style="margin-top: 10px; display: none;">
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button class="accordion-header filter-nav-btn" data-target="gates-section" onclick="toggleStoreSection('gates-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #b11e1e; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
+                    <span><i class="fa-solid fa-gate"></i> البوابات الرئيسية الكبرى</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
+                </button>
+                <button class="accordion-header filter-nav-btn" data-target="doors-section" onclick="toggleStoreSection('doors-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #37474f; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
+                    <span><i class="fa-solid fa-door-open"></i> أبواب الأمان والشقق</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
+                </button>
+                <button class="accordion-header filter-nav-btn" data-target="tables-section" onclick="toggleStoreSection('tables-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #1a1a1a; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
+                    <span><i class="fa-solid fa-chair"></i> الأثاث والرفوف المودرن</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
+                </button>
+                <button class="accordion-header filter-nav-btn" data-target="garden-section" onclick="toggleStoreSection('garden-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #2e7d32; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
+                    <span><i class="fa-solid fa-tree"></i> ديكورات الحدائق والخيم</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
+                </button>
+            </div>
+        </div>
+
     </div>
 
-    <!-- 💻 الجزء الخاص بالكمبيوتر فقط (يختفي على الجوال تلقائياً) -->
-    <div class="desktop-only-filter" style="margin-top: 10px;">
-        <!-- 1. لوحة قسم البوابات الرئيسية -->
-        <div class="accordion-item" style="margin-bottom: 15px; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-            <button class="accordion-header" onclick="toggleStoreSection('gates-section', this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #b11e1e; color: white; border: none; font-size: 20px; font-weight: bold; cursor: pointer; text-align: right;">
-                <span><i class="fa-solid fa-gate"></i> البوابات الرئيسية للقصور والفلل والمنازل</span>
-                <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
-            </button>
-        </div>
+    <style>
+        @media (max-width: 768px) {
+            .desktop-only-filter { display: none !important; }
+            .mobile-only-filter { display: block !important; }
+            .store-section { display: block !important; margin-bottom: 30px; }
+        }
+        @media (min-width: 769px) {
+            .mobile-only-filter { display: none !important; }
+            .desktop-only-filter { display: block !important; }
+            .store-section { display: none; margin-top: 20px; }
+        }
+    </style>
+    <!-- ================= نهاية نظام تصفية المتجر الذكي (الهجين) ================= -->
 
-        <!-- 2. لوحة قسم أبواب الأمان -->
-        <div class="accordion-item" style="margin-bottom: 15px; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-            <button class="accordion-header" onclick="toggleStoreSection('doors-section', this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #37474f; color: white; border: none; font-size: 20px; font-weight: bold; cursor: pointer; text-align: right;">
-                <span><i class="fa-solid fa-door-open"></i> أبواب الأمان والفلل العازلة للصوت والضوضاء</span>
-                <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
-            </button>
-        </div>
-
-        <!-- 3. لوحة قسم الطاولات المودرن -->
-        <div class="accordion-item" style="margin-bottom: 15px; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-            <button class="accordion-header" onclick="toggleStoreSection('tables-section', this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1a1a1a; color: white; border: none; font-size: 20px; font-weight: bold; cursor: pointer; text-align: right;">
-                <span><i class="fa-solid fa-chair"></i> قسم المنتجات الجديدة للأثاث والرفوف المودرن</span>
-                <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
-            </button>
-        </div>
-    </div>
-
-</div>
-
-<!-- تنسيق ستايل مخفي وذكي لتحديد الاختفاء والظهور حسب نوع الجهاز تلقائياً بدون تدخل منك -->
-<style>
-    @media (max-width: 768px) {
-        .desktop-only-filter { display: none !important; }
-        .mobile-only-filter { display: block !important; }
-        .store-section { display: block !important; } /* على الجوال تظهر الأقسام وتتحكم بها المنسدلة */
-    }
-    @media (min-width: 769px) {
-        .mobile-only-filter { display: none !important; }
-        .desktop-only-filter { display: block !important; }
-        .store-section { display: none; padding: 25px; background-color: #fff; } /* على الكمبيوتر تبدأ مخفية حتى يتم الضغط */
-    }
 </style>
 
 
@@ -1295,44 +1293,48 @@
             </div>
             <div class="product-grid"></div>
         </section>
-        <!-- ================= كود الجافا سكريبت الذكي لتشغيل نظام التصفية الهجين ================= -->
+             <!-- ================= كود الجافا سكريبت المطور لفك تجمد الجوال والتبديل الآلي ================= -->
     <script>
-    // 1. دالة تصفية القائمة المنسدلة (خاصة بالجوال)
+    // 1. دالة تصفية القائمة المنسدلة المباشرة والمدعومة بالكامل على الجوال
     function filterCategoryMobile(selectedCategory) {
         const sections = document.querySelectorAll('.store-section');
         sections.forEach(section => {
             if (selectedCategory === 'all') {
-                section.style.setAttribute('style', 'display: block !important');
+                section.style.display = 'block';
             } else {
                 if (section.id === selectedCategory) {
-                    section.style.setAttribute('style', 'display: block !important');
+                    section.style.display = 'block';
                 } else {
-                    section.style.setAttribute('style', 'display: none !important');
+                    section.style.display = 'none';
                 }
             }
         });
     }
 
-    // 2. دالة فتح وإغلاق اللوحات المربعة (خاصة بالكمبيوتر)
+    // 2. دالة التبديل الآلي والفتح الذكي للوحات (خاصة بالكمبيوتر)
     function toggleStoreSection(sectionId, headerElement) {
         const targetSection = document.getElementById(sectionId);
+        if (!targetSection) return;
         
-        // جلب السهم الخاص باللوحة الحالية لتمريره حركياً
-        let arrow;
-        if (sectionId === 'gates-section') arrow = document.querySelector('.arrow-icon-1');
-        if (sectionId === 'doors-section') arrow = document.querySelector('.arrow-icon-2');
-        if (sectionId === 'tables-section') arrow = document.querySelector('.arrow-icon-3');
-        
-        if (targetSection.style.display === 'none' || targetSection.style.display === '') {
+        const isAlreadyVisible = (targetSection.style.display === 'block');
+
+        // أتمتة غلق كافة الأقسام الأخرى وإعادة حركة الأسهم لوضعها الطبيعي فوراً
+        document.querySelectorAll('.store-section').forEach(section => {
+            section.style.display = 'none';
+        });
+        document.querySelectorAll('.arrow-icon').forEach(arrow => {
+            arrow.style.transform = 'rotate(0deg)';
+        });
+
+        // إذا كان القسم المختار مغلقاً، افتحه الحين ودوّر سهمه للأعلى
+        if (!isAlreadyVisible) {
             targetSection.style.display = 'block';
-            if (arrow) arrow.style.transform = 'rotate(180deg)';
-        } else {
-            targetSection.style.display = 'none';
-            if (arrow) arrow.style.transform = 'rotate(0deg)';
+            const currentArrow = headerElement.querySelector('.arrow-icon');
+            if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
         }
     }
     </script>
+</div>
+</body>
+</html>
 
-
-    </div>
-    </html>
