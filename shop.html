@@ -1295,40 +1295,40 @@
             </div>
             <div class="product-grid"></div>
         </section>
-             <!-- ================= كود الجافا سكريبت المطور لفك تجمد الجوال والتبديل الآلي ================= -->
+                <!-- ================= كود الجافا سكريبت المطور النهائي لفك التجمد والتبديل الآلي ================= -->
     <script>
-    // 1. دالة تصفية القائمة المنسدلة المباشرة والمدعومة بالكامل على الجوال
+    // 1. دالة تصفية القائمة المنسدلة على الجوال (تستهدف الكلاس الجديد المباشر)
     function filterCategoryMobile(selectedCategory) {
-        const sections = document.querySelectorAll('.store-section');
+        const sections = document.querySelectorAll('.custom-store-section');
         sections.forEach(section => {
             if (selectedCategory === 'all') {
-                section.style.display = 'block';
+                section.style.setProperty('display', 'block', 'important');
             } else {
                 if (section.id === selectedCategory) {
-                    section.style.display = 'block';
+                    section.style.setProperty('display', 'block', 'important');
                 } else {
-                    section.style.display = 'none';
+                    section.style.setProperty('display', 'none', 'important');
                 }
             }
         });
     }
 
-    // 2. دالة التبديل الآلي والفتح الذكي للوحات (خاصة بالكمبيوتر)
+    // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر
     function toggleStoreSection(sectionId, headerElement) {
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
         
         const isAlreadyVisible = (targetSection.style.display === 'block');
 
-        // أتمتة غلق كافة الأقسام الأخرى وإعادة حركة الأسهم لوضعها الطبيعي فوراً
-        document.querySelectorAll('.store-section').forEach(section => {
+        // غلق كافة الأقسام الأخرى تلقائياً لإلغاء التداخل اليدوي الممل
+        document.querySelectorAll('.custom-store-section').forEach(section => {
             section.style.display = 'none';
         });
         document.querySelectorAll('.arrow-icon').forEach(arrow => {
             arrow.style.transform = 'rotate(0deg)';
         });
 
-        // إذا كان القسم المختار مغلقاً، افتحه الحين ودوّر سهمه للأعلى
+        // فتح القسم المختار الحين بسلاسة وتدوير السهم
         if (!isAlreadyVisible) {
             targetSection.style.display = 'block';
             const currentArrow = headerElement.querySelector('.arrow-icon');
@@ -1339,4 +1339,3 @@
 </div>
 </body>
 </html>
-
