@@ -304,7 +304,7 @@
     </header>
 
     <div class="container">
-             <!-- ================= بداية نظام تصفية المتجر الذكي المطور الشامل ================= -->
+                <!-- ================= بداية نظام تصفية المتجر الذكي المطور الشامل ================= -->
     <div class="smart-store-filter" style="max-width: 1200px; margin: 25px auto; padding: 0 15px; font-family: 'Tajawal', sans-serif;">
 
         <!-- 📱 الجزء الخاص بالجوال فقط (منسدلة حمراء أنيقة بـ 4 أقسام كاملة) -->
@@ -322,22 +322,18 @@
         <!-- 💻 الجزء الخاص بالكمبيوتر فقط (4 لوحات مربعة فاخرة ذكية التبديل) -->
         <div class="desktop-only-filter" style="margin-top: 10px;">
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <!-- لوحة 1 -->
                 <button class="accordion-header filter-nav-btn" onclick="toggleStoreSection('gates-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #b11e1e; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
                     <span><i class="fa-solid fa-gate"></i> البوابات الرئيسية الكبرى</span>
                     <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
                 </button>
-                <!-- لوحة 2 -->
                 <button class="accordion-header filter-nav-btn" onclick="toggleStoreSection('doors-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #37474f; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
                     <span><i class="fa-solid fa-door-open"></i> أبواب الأمان والشقق</span>
                     <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
                 </button>
-                <!-- لوحة 3 -->
                 <button class="accordion-header filter-nav-btn" onclick="toggleStoreSection('tables-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #1a1a1a; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
                     <span><i class="fa-solid fa-chair"></i> الأثاث والرفوف المودرن</span>
                     <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
                 </button>
-                <!-- لوحة 4 -->
                 <button class="accordion-header filter-nav-btn" onclick="toggleStoreSection('garden-section', this)" style="flex: 1; min-width: 240px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #2e7d32; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif;">
                     <span><i class="fa-solid fa-tree"></i> ديكورات الحدائق والخيم</span>
                     <i class="fa-solid fa-chevron-down arrow-icon" style="transition: transform 0.3s;"></i>
@@ -347,16 +343,20 @@
 
     </div>
 
+    <!-- استايل حاسم لإجبار الإخفاء والظهور المتبادل على الأجهزة -->
     <style>
+        .custom-store-section.hidden-section { display: none !important; }
+        .custom-store-section.show-section { display: block !important; }
+        
         @media (max-width: 768px) {
             .desktop-only-filter { display: none !important; }
             .mobile-only-filter { display: block !important; }
-            .custom-store-section { display: block !important; margin-bottom: 40px !important; }
+            .custom-store-section { display: block; margin-bottom: 40px !important; }
         }
         @media (min-width: 769px) {
             .mobile-only-filter { display: none !important; }
             .desktop-only-filter { display: block !important; }
-            .custom-store-section { display: none; margin-top: 20px; } /* تبدأ مخفية على الكمبيوتر لتنظيم التصفح */
+            .custom-store-section { display: none; margin-top: 20px; }
         }
     </style>
     <!-- ================= نهاية نظام تصفية المتجر الذكي المطور الشامل ================= -->
