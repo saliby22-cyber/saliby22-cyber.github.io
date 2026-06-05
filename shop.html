@@ -304,7 +304,7 @@
     </header>
 
     <div class="container">
-                <!-- ================= بداية نظام تصفية المتجر الذكي المطور الشامل ================= -->
+                   <!-- ================= بداية نظام تصفية المتجر الذكي المطور الشامل ================= -->
     <div class="smart-store-filter" style="max-width: 1200px; margin: 25px auto; padding: 0 15px; font-family: 'Tajawal', sans-serif;">
 
         <!-- 📱 الجزء الخاص بالجوال فقط (منسدلة حمراء أنيقة بـ 4 أقسام كاملة) -->
@@ -343,7 +343,7 @@
 
     </div>
 
-    <!-- استايل حاسم لإجبار الإخفاء والظهور المتبادل على الأجهزة -->
+    <!-- استايل حاسم لإجبار الإخفاء والظهور المتبادل عبر الكلاس الموحد -->
     <style>
         .custom-store-section.hidden-section { display: none !important; }
         .custom-store-section.show-section { display: block !important; }
@@ -351,16 +351,19 @@
         @media (max-width: 768px) {
             .desktop-only-filter { display: none !important; }
             .mobile-only-filter { display: block !important; }
-            .custom-store-section { display: block; margin-bottom: 40px !important; }
+            .custom-store-section { display: block !important; margin-bottom: 40px !important; }
         }
         @media (min-width: 769px) {
             .mobile-only-filter { display: none !important; }
             .desktop-only-filter { display: block !important; }
-            .custom-store-section { display: none; margin-top: 20px; }
+                   @media (min-width: 769px) {
+            .mobile-only-filter { display: none !important; }
+            .desktop-only-filter { display: block !important; }
+            .custom-store-section { display: none; margin-top: 20px; } 
         }
+
     </style>
     <!-- ================= نهاية نظام تصفية المتجر الذكي المطور الشامل ================= -->
-</style>
 
         <!-- ================= القسم الأول: الأثاث المودرن والبار ================= -->
      <section id="tables-section" class="custom-store-section shop-section">
