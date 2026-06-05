@@ -1313,7 +1313,7 @@
         });
     }
 
-    // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر
+       // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر
     function toggleStoreSection(sectionId, headerElement) {
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
@@ -1335,7 +1335,22 @@
             if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
         }
     }
-    </script>
-</div>
-</body>
-</html>
+
+    // 🚀 3. كود الفتح الآلي الفوري لقسم البوابات عند تحميل المتجر لفك التجمد
+    window.addEventListener('DOMContentLoaded', () => {
+        // إذا كان الزائر يتصفح من كمبيوتر (شاشة أكبر من 768 بكسل)
+        if (window.innerWidth > 768) {
+            // البحث عن زر قسم البوابات الحمراء وضغطه آلياً
+            const gatesButton = document.querySelector("button[onclick*='gates-section']");
+            if (gatesButton) {
+                toggleStoreSection('gates-section', gatesButton);
+            }
+        } else {
+            // على الجوال، اضبط المنسدلة الافتراضية لتعرض قسم البوابات بدلاً من ترك الشاشة بيضاء
+            const mobileSelect = document.getElementById('category-select');
+            if (mobileSelect) {
+                mobileSelect.value = 'gates-section';
+                filterCategoryMobile('gates-section');
+            }
+        }
+    });
