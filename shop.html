@@ -1295,9 +1295,9 @@
             </div>
             <div class="product-grid"></div>
         </section>
-                <!-- ================= كود الجافا سكريبت المطور النهائي لفك التجمد والتبديل الآلي ================= -->
+                   <!-- ================= كود الجافا سكريبت المطور النهائي لفك التجمد والتبديل الآلي ================= -->
     <script>
-    // 1. دالة تصفية القائمة المنسدلة على الجوال (تستهدف الكلاس الجديد المباشر)
+    // 1. دالة تصفية القائمة المنسدلة على الجوال
     function filterCategoryMobile(selectedCategory) {
         const sections = document.querySelectorAll('.custom-store-section');
         sections.forEach(section => {
@@ -1313,7 +1313,7 @@
         });
     }
 
-       // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر
+    // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر (تمت إضافة فحص الحماية لمنع التعطل)
     function toggleStoreSection(sectionId, headerElement) {
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
@@ -1324,33 +1324,27 @@
         document.querySelectorAll('.custom-store-section').forEach(section => {
             section.style.display = 'none';
         });
+        
         document.querySelectorAll('.arrow-icon').forEach(arrow => {
-            arrow.style.transform = 'rotate(0deg)';
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
         });
 
         // فتح القسم المختار الحين بسلاسة وتدوير السهم
         if (!isAlreadyVisible) {
             targetSection.style.display = 'block';
-            const currentArrow = headerElement.querySelector('.arrow-icon');
-            if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
+            if (headerElement) {
+                const currentArrow = headerElement.querySelector('.arrow-icon');
+                if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
+            }
         }
     }
 
-    // 🚀 3. كود الفتح الآلي الفوري لقسم البوابات عند تحميل المتجر لفك التجمد
+    // 🚀 3. كود الفتح الآمن والآلي عند تحميل الصفحة لأول مرة
     window.addEventListener('DOMContentLoaded', () => {
-        // إذا كان الزائر يتصفح من كمبيوتر (شاشة أكبر من 768 بكسل)
-        if (window.innerWidth > 768) {
-            // البحث عن زر قسم البوابات الحمراء وضغطه آلياً
-            const gatesButton = document.querySelector("button[onclick*='gates-section']");
-            if (gatesButton) {
-                toggleStoreSection('gates-section', gatesButton);
-            }
-        } else {
-            // على الجوال، اضبط المنسدلة الافتراضية لتعرض قسم البوابات بدلاً من ترك الشاشة بيضاء
-            const mobileSelect = document.getElementById('category-select');
-            if (mobileSelect) {
-                mobileSelect.value = 'gates-section';
-                filterCategoryMobile('gates-section');
-            }
+        // فك تجمد قسم البوابات على الكمبيوتر فوراً
+        const initialSection = document.getElementById('gates-section');
+        if (initialSection) {
+            initialSection.style.display = 'block';
         }
     });
+    </script>
