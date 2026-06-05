@@ -1320,70 +1320,50 @@
             </div>
             <div class="product-grid"></div>
         </section>
-                        <!-- ================= كود الجافا سكريبت المطور النهائي لفك التجمد والتبديل الآلي ================= -->
+                           <!-- ================= كود الجافا سكريبت المطور النهائي المباشر لفك التجمد ================= -->
     <script>
-    // 1. دالة تصفية القائمة المنسدلة على الجوال
+    // 1. دالة تصفية القائمة المنسدلة على الجوال (تعمل بمرونة مطلقة)
     function filterCategoryMobile(selectedCategory) {
-        const sections = document.querySelectorAll('.custom-store-section, .shop-section');
+        const sections = document.querySelectorAll('.custom-store-section');
         sections.forEach(section => {
             if (selectedCategory === 'all') {
-                section.style.setProperty('display', 'block', 'important');
-                section.classList.add('show-section');
-                section.classList.remove('hidden-section');
+                section.style.display = 'block';
             } else {
                 if (section.id === selectedCategory) {
-                    section.style.setProperty('display', 'block', 'important');
-                    section.classList.add('show-section');
-                    section.classList.remove('hidden-section');
+                    section.style.display = 'block';
                 } else {
-                    section.style.setProperty('display', 'none', 'important');
-                    section.classList.add('hidden-section');
-                    section.classList.remove('show-section');
+                    section.style.display = 'none';
                 }
             }
         });
     }
 
-    // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر مع حقن الإظهار الصارم
+    // 2. دالة التبديل الآلي والتنقل الذكي للوحات على الكمبيوتر
     function toggleStoreSection(sectionId, headerElement) {
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
         
-        const sections = document.querySelectorAll('.custom-store-section, .shop-section');
-        
-        // غلق كافة الأقسام الأخرى تلقائياً لإلغاء التداخل
-        sections.forEach(section => {
-            section.style.setProperty('display', 'none', 'important');
-            section.classList.add('hidden-section');
-            section.classList.remove('show-section');
+        // فحص حالة العرض الحالية مباشرة
+        const isCurrentlyHidden = (targetSection.style.display === 'none' || targetSection.style.display === '');
+
+        // خطوة أوتوماتيكية: إغلاق كافة الأقسام الأخرى لمنع التداخل والفوضى
+        document.querySelectorAll('.custom-store-section').forEach(section => {
+            section.style.display = 'none';
         });
-        
         document.querySelectorAll('.arrow-icon').forEach(arrow => {
-            if (arrow) arrow.style.transform = 'rotate(0deg)';
+            arrow.style.transform = 'rotate(0deg)';
         });
 
-        targetSection.style.setProperty('display', 'block', 'important');
-        targetSection.classList.add('show-section');
-        targetSection.classList.remove('hidden-section');
-        
-        if (headerElement) {
+        // إذا كان القسم المختار مخفياً، افتحه الحين واعرض منتجاته الفاخرة
+        if (isCurrentlyHidden) {
+            targetSection.style.display = 'block';
             const currentArrow = headerElement.querySelector('.arrow-icon');
             if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
+        } else {
+            targetSection.style.display = 'none';
         }
-    window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-            const initialSection = document.getElementById('gates-section');
-            const gatesButton = document.querySelector("button[onclick*='gates-section']");
-            
-            if (initialSection) {
-                initialSection.style.setProperty('display', 'block', 'important');
-                initialSection.classList.add('show-section');
-                initialSection.classList.remove('hidden-section');
-            }
-            if (gatesButton) {
-                const currentArrow = gatesButton.querySelector('.arrow-icon');
-                if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
-            }
-        }, 100);
-    });
+    }
     </script>
+</div>
+</body>
+</html>
