@@ -61,7 +61,41 @@
             color: #333;
             line-height: 1.6;
         }
-        
+       /* غلاف وحاوية الشعار الرقمية */
+.cyber-logo-wrapper {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* تأثير المسح بشعاع ليزر التقطيع المائل */
+.laser-scanner {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 35px;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(240, 196, 25, 0) 0%,
+        rgba(240, 196, 25, 0.8) 50%,
+        rgba(240, 196, 25, 0) 100%
+    );
+    transform: skewX(-25deg);
+    z-index: 3;
+    animation: laserScan 4s infinite ease-in-out;
+    pointer-events: none;
+}
+
+/* حركة الوميض بالتناوب من اليمين إلى اليسار */
+@keyframes laserScan {
+    0% { left: -100%; }
+    30% { left: 200%; }
+    100% { left: 200%; }
+}
+ 
         /* روابط التنقل الصفراء والمميزة لترويستك الفاخرة */
         .store-nav {
             display: flex;
@@ -285,10 +319,10 @@
                    border-bottom: 3px solid #b00; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         
         <!-- استدعاء الشعار المعتمد الأصلي -->
-        <div style="margin-bottom: 16px;">
-            <img src="logo.png" alt="شعار مؤسسة محمد خالد للحدادة" style="height: 80px; width: auto; object-fit: contain;">
-        </div>
-        
+        <div class="cyber-logo-wrapper" style="margin-bottom: 16px;">
+    <div class="laser-scanner"></div>
+    <img src="logo.png" alt="شعار مؤسسة محمد خالد للحدادة" class="cyber-logo-img" style="height: 80px; width: auto; object-fit: contain;">
+</div>
         <h1 style="font-weight: 800; font-size: 2.1em; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">
             مؤسسة محمد خالد للحدادة – الأفرنجية
         </h1>
