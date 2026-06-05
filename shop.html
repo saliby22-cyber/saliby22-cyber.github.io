@@ -1324,26 +1324,19 @@
             section.classList.remove('show-section');
         });
         
-        // إعادة الأسهم لشكلها الطبيعي
         document.querySelectorAll('.arrow-icon').forEach(arrow => {
             if (arrow) arrow.style.transform = 'rotate(0deg)';
         });
 
-        // فتح القسم المختار الحين بإجبار مطلق لكسر قيود الـ CSS
         targetSection.style.setProperty('display', 'block', 'important');
         targetSection.classList.add('show-section');
         targetSection.classList.remove('hidden-section');
         
-        // تدوير السهم إذا وجد
         if (headerElement) {
             const currentArrow = headerElement.querySelector('.arrow-icon');
             if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
         }
-    }
-
-    // 🚀 3. تشغيل قسم البوابات تلقائياً بقوة وبمجرد فتح المتجر وفك الكاش
     window.addEventListener('DOMContentLoaded', () => {
-        // حماية مخصصة لانتظار تحميل البنية بالكامل
         setTimeout(() => {
             const initialSection = document.getElementById('gates-section');
             const gatesButton = document.querySelector("button[onclick*='gates-section']");
