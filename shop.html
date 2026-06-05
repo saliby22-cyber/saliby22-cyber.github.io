@@ -1308,32 +1308,31 @@ function filterCategoryMobile(selectedCategory) {
     });
 }
 
-// 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر
-function toggleStoreSection(sectionId, headerElement) {
-    const targetSection = document.getElementById(sectionId);
-    if (!targetSection) return;
-    
-    // فحص حالة القسم الحالية بشكل دقيق
-    const isCurrentlyHidden = (window.getComputedStyle(targetSection).display === 'none' || targetSection.style.display === 'none');
+    // 2. دالة التبديل الآلي والفتح الذكي للوحات على الكمبيوتر (المصححة لفك التجمد)
+    function toggleStoreSection(sectionId, headerElement) {
+        const targetSection = document.getElementById(sectionId);
+        if (!targetSection) return;
+        
+        // الفحص الدقيق لحالة القسم الحالية عبر الكلاسات الإجبارية
+        const isCurrentlyVisible = targetSection.classList.contains('show-section');
 
-    // خطوة أوتوماتيكية: إغلاق كافة الأقسام الأخرى لمنع التداخل الممل
-    document.querySelectorAll('.custom-store-section').forEach(section => {
-        section.style.setProperty('display', 'none', 'important');
-    });
-    document.querySelectorAll('.arrow-icon').forEach(arrow => {
-        arrow.style.transform = 'rotate(0deg)';
-    });
+        // أتمتة غلق كافة الأقسام الأخرى فوراً لمنع التداخل
+        document.querySelectorAll('.custom-store-section').forEach(section => {
+            section.classList.remove('show-section');
+            section.classList.add('hidden-section');
+            section.style.display = 'none';
+        });
+        document.querySelectorAll('.arrow-icon').forEach(arrow => {
+            arrow.style.transform = 'rotate(0deg)';
+        });
 
-    // إذا كان القسم المختار مخفياً، اجبره الحين على الظهور الكامل وافتح منتجاته
-    if (isCurrentlyHidden) {
-        targetSection.style.setProperty('display', 'block', 'important');
-        const currentArrow = headerElement.querySelector('.arrow-icon');
-        if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
-    } else {
-        targetSection.style.setProperty('display', 'none', 'important');
+        // إذا كان القسم المختار مغلقاً، افتحه الحين واجبره على الظهور الكامل
+        if (!isCurrentlyVisible) {
+            targetSection.classList.remove('hidden-section');
+            targetSection.classList.add('show-section');
+            targetSection.style.display = 'block';
+            
+            const currentArrow = headerElement.querySelector('.arrow-icon');
+            if (currentArrow) currentArrow.style.transform = 'rotate(180deg)';
+        }
     }
-}
-</script>
-</div>
-</body>
-</html>
