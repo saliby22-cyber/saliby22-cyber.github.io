@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجربة الواجهة السينمائية الفاخرة | مؤسسة محمد خالد</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        /* إعادة ضبط المتصفح لملء الشاشة بالكامل هيدروليكياً */
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #000; }
+        
+        /* حاوية الفيديو السينمائي العملاقة */
+        .video-hero-container { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        
+        /* استدعاء الفيديو وإجباره على التمدد والتحريك الهادئ (تأثير كين بيرنز البطيء) */
+        .video-hero-container video { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%) scale(1.02); z-index: 1; animation: kenBurnsVideo 20s infinite alternate ease-in-out; }
+        
+        /* طبقة التظليل السينمائية لإبراز دقة وبريق نصوص الواجهة البيضاء */
+        .video-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: 2; }
+        
+        /* الحاوية المركزية الحاضنة للنصوص والأزرار المرتفعة */
+        .hero-content { position: relative; z-index: 3; text-align: center; color: #fff; padding: 0 20px; max-width: 800px; box-sizing: border-box; }
+        
+        /* تنسيق العنوان الكبير الصاعد بفخامة */
+        .hero-title { font-size: 44px; font-weight: 900; margin: 0 0 15px 0; color: #fff; text-shadow: 0 4px 15px rgba(0,0,0,0.6); animation: fadeInUp 1.2s ease-out both; }
+        .hero-title span { color: #b11e1e; } /* تمييز كلمة الفخامة باللون الأحمر الحديدي */
+        
+        /* تنسيق الوصف الجغرافي المستهدف للـ AI وجوجل */
+        .hero-subtitle { font-size: 18px; font-weight: 500; margin: 0 0 35px 0; color: #e0e0e0; text-shadow: 0 2px 8px rgba(0,0,0,0.5); animation: fadeInUp 1.2s ease-out both; animation-delay: 0.4s; line-height: 1.6; }
+        
+        /* زر الدخول المطور للمتجر الإلكتروني */
+        .hero-btn { display: inline-flex; align-items: center; gap: 10px; background-color: #b11e1e; color: #fff; padding: 14px 40px; font-weight: bold; font-size: 16px; border-radius: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(177, 30, 30, 0.4); transition: 0.3s ease-in-out; animation: fadeInUp 1.2s ease-out both; animation-delay: 0.8s; }
+        .hero-btn:hover { background-color: #fff; color: #b11e1e; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3); }
+
+        /* سحر حركة صعود ونعومة تدرج الكلمات (Fade-In Up) المقتبس من موقع أبياتنا هيلز */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* سحر حركة الزوم العملاق والبطيء المستمر للفيديو لإعطاء بعد ثلاثي الأبعاد فاخر */
+        @keyframes kenBurnsVideo {
+            from { transform: translate(-50%, -50%) scale(1.02); }
+            to { transform: translate(-50%, -50%) scale(1.12); }
+        }
+
+        /* تكييف التنسيق فوراً ليصبح خرافياً ومنظماً على شاشات الجوال العمودية */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 28px; }
+            .hero-subtitle { font-size: 15px; margin-bottom: 25px; }
+            .hero-btn { padding: 12px 30px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الواجهة السينمائية الذكية المعزولة والمجربة -->
+    <div class="video-hero-container">
+        
+        <!-- استدعاء ملف الفيديو الاحترافي المحصن بالأمر الصامت والتشغيل التلقائي اللانهائي -->
+        <video autoplay loop muted playsinline>
+            <source src="hero-gate.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل خلفيات الفيديو الفاخرة.
+        </video>
+        
+        <!-- طبقة التظليل اللمسية -->
+        <div class="video-hero-overlay"></div>
+
+        <!-- النصوص والأزرار الصاعدة بنعومة وتواقيت هندسية متتالية -->
+        <div class="hero-content">
+            <h1 class="hero-title">عصر جديد من <span>العيش الفاخر</span></h1>
+            <p class="hero-subtitle">مؤسسة محمد خالد للحدادة الأفرنجية وبوابات الفلل والقصور الذكية الموجهة حصرياً لـ (يعفور، الصبورة، ضاحية قدسيا، ومشروع دمر)</p>
+            <a href="shop.html" class="hero-btn">اكتشف المتجر الفاخر الآن <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        
+    </div>
+
+</body>
+</html>
