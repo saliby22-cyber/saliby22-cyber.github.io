@@ -7,155 +7,155 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comshop.html</loc>
+    <loc>https://saliby-metal.com/shop.html</loc>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comblog.html</loc>
+    <loc>https://saliby-metal.com/blog.html</loc>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comdarabeen.html</loc>
+    <loc>https://saliby-metal.com/darabeen.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comdoors.html</loc>
+    <loc>https://saliby-metal.com/doors.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comengineering.html</loc>
+    <loc>https://saliby-metal.com/engineering.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comgarden.html</loc>
+    <loc>https://saliby-metal.com/garden.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comgates.html</loc>
+    <loc>https://saliby-metal.com/gates.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.compergola.html</loc>
+    <loc>https://saliby-metal.com/pergola.html</loc>
     <priority>0.85</priority>
   </url>
 
   <!-- ================= 2. المقالات المخصصة داخل المدونة ================= -->
   <url>
-    <loc>https://saliby-metal.comarticle-lgs.html</loc>
+    <loc>https://saliby-metal.com/article-lgs.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comarticle-stair.html</loc>
+    <loc>https://saliby-metal.com/article-stair.html</loc>
     <priority>0.80</priority>
   </url>
 
   <!-- ================= 3. منتجات المعمل والورشة والأبواب الفاخرة ================= -->
   <url>
-    <loc>https://saliby-metal.comproduct-arc-door.html</loc>
+    <loc>https://saliby-metal.com/product-arc-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-classic-door.html</loc>
+    <loc>https://saliby-metal.com/product-classic-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-diamond-door.html</loc>
+    <loc>https://saliby-metal.com/product-diamond-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-geometric-door.html</loc>
+    <loc>https://saliby-metal.com/product-geometric-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-greek-door.html</loc>
+    <loc>https://saliby-metal.com/product-greek-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-green-door.html</loc>
+    <loc>https://saliby-metal.com/product-green-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-laser-door.html</loc>
+    <loc>https://saliby-metal.com/product-laser-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-modern-door.html</loc>
+    <loc>https://saliby-metal.com/product-modern-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-wave-door.html</loc>
+    <loc>https://saliby-metal.com/product-wave-door.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-white-door.html</loc>
+    <loc>https://saliby-metal.com/product-white-door.html</loc>
     <priority>0.80</priority>
   </url>
 
   <!-- ================= 4. صفحات أبواب الأمان والفلل العازلة للصوت ================= -->
   <url>
-    <loc>https://saliby-metal.comproduct-blue-insulated-door.html</loc>
+    <loc>https://saliby-metal.com/product-blue-insulated-door.html</loc>
     <priority>0.80</priority>
   </url>
 
   <!-- ================= 5. صفحات المنتجات الجديدة للأثاث والرفوف والبوابات الكبيرة ================= -->
   <url>
-    <loc>https://saliby-metal.comproduct-bar-table.html</loc>
+    <loc>https://saliby-metal.com/product-bar-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-bolt-table.html</loc>
+    <loc>https://saliby-metal.com/product-bolt-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-crossed-table.html</loc>
+    <loc>https://saliby-metal.com/product-crossed-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-cube-table.html</loc>
+    <loc>https://saliby-metal.com/product-cube-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-divider.html</loc>
+    <loc>https://saliby-metal.com/product-divider.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-door-table.html</loc>
+    <loc>https://saliby-metal.com/product-door-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-geometric-table.html</loc>
+    <loc>https://saliby-metal.com/product-geometric-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-hydrant-table.html</loc>
+    <loc>https://saliby-metal.com/product-hydrant-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-oval-shelf.html</loc>
+    <loc>https://saliby-metal.com/product-oval-shelf.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-shoe-rack.html</loc>
+    <loc>https://saliby-metal.com/product-shoe-rack.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-twisted-table.html</loc>
+    <loc>https://saliby-metal.com/product-twisted-table.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-wood-shelf.html</loc>
+    <loc>https://saliby-metal.com/product-wood-shelf.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-zigzag-shelf.html</loc>
+    <loc>https://saliby-metal.com/product-zigzag-shelf.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-modern-gate.html</loc>
+    <loc>https://saliby-metal.com/product-modern-gate.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://saliby-metal.comproduct-royal-gold-gate.html</loc>
+    <loc>https://saliby-metal.com/product-royal-gold-gate.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.85</priority>
   </url>
