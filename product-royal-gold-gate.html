@@ -26,22 +26,10 @@
         "availability": "https://schema.orgInStock"
       },
       "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "يعفور، ريف دمشق، سوريا"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "الصبورة، ريف دمشق، سوريا"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "ضاحية قدسيا، ريف دمشق، سوريا"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "مشروع دمر، دمشق، سوريا"
-        }
+        {"@type": "AdministrativeArea", "name": "يعفور، ريف دمشق، سوريا"},
+        {"@type": "AdministrativeArea", "name": "الصبورة، ريف دمشق، سوريا"},
+        {"@type": "AdministrativeArea", "name": "ضاحية قدسيا، ريف دمشق، سوريا"},
+        {"@type": "AdministrativeArea", "name": "مشروع دمر، دمشق، سوريا"}
       ],
       "keywords": "بوابات فلل يعفور، حدادة فرنجية الصبورة، أبواب أمان ضاحية قدسيا، حديد مودرن مشروع دمر، ديكورات حديد مطاعم دمشق، بوابات مطاعم فاخرة، بوابات سلايدات مودرن"
     }
@@ -143,22 +131,22 @@
 </div>
 
 <script>
-    const box = document.getElementById('zoom-container');
-    const img = document.getElementById('zoom-image');
+    var container = document.getElementById('zoom-container');
+    var image = document.getElementById('zoom-image');
 
-    box.addEventListener('mousemove', function(e) {
-        const rect = box.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xp = (x / rect.width) * 100;
-        const yp = (y / rect.height) * 100;
-        img.style.transformOrigin = xp + '% ' + yp + '%';
-        img.style.transform = 'scale(2.5)';
+    container.addEventListener('mousemove', function(e) {
+        var rect = container.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var xPercent = (x / rect.width) * 100;
+        var yPercent = (y / rect.height) * 100;
+        image.style.transformOrigin = xPercent + '% ' + yPercent + '%';
+        image.style.transform = 'scale(2.5)';
     });
 
-    box.addEventListener('mouseleave', function() {
-        img.style.transformOrigin = 'center center';
-        img.style.transform = 'scale(1)';
+    container.addEventListener('mouseleave', function() {
+        image.style.transformOrigin = 'center center';
+        image.style.transform = 'scale(1)';
     });
 </script>
 
