@@ -1419,15 +1419,32 @@
             <div class="product-grid"></div>
         </section>
                            <!-- ================= كود الجافا سكريبت المطور النهائي المباشر لفك التجمد ================= -->
-    <script>
+   <script>
+    // انتظر حتى يتم تحميل الصفحة بالكامل لربط القائمة
+    document.addEventListener("DOMContentLoaded", function() {
+        // ابحث عن القائمة المنسدلة في الجوال (تلقائياً عبر كل عناصر السلكت)
+        const mobileSelect = document.querySelector('select');
+        
+        if (mobileSelect) {
+            mobileSelect.addEventListener('change', function() {
+                // استخراج القيمة التي اخترتها من القائمة
+                let selectedCategory = this.value;
+                
+                // تشغيل دالة التصفية فوراً
+                filterCategoryMobile(selectedCategory);
+            });
+        }
+    });
+
     // 1. دالة تصفية القائمة المنسدلة على الجوال (تعمل بمرونة مطلقة)
     function filterCategoryMobile(selectedCategory) {
         const sections = document.querySelectorAll('.custom-store-section');
         sections.forEach(section => {
-            if (selectedCategory === 'all') {
+            if (selectedCategory === 'all' || selectedCategory === '') {
                 section.style.display = 'block';
             } else {
-                if (section.id === selectedCategory) {
+                // فحص إذا كان معرّف القسم يحتوي على القيمة المختارة
+                if (section.id === selectedCategory || section.id.includes(selectedCategory)) {
                     section.style.display = 'block';
                 } else {
                     section.style.display = 'none';
@@ -1441,10 +1458,8 @@
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
         
-        // فحص حالة العرض الحالية مباشرة
         const isCurrentlyHidden = (targetSection.style.display === 'none' || targetSection.style.display === '');
 
-        // خطوة أوتوماتيكية: إغلاق كافة الأقسام الأخرى لمنع التداخل والفوضى
         document.querySelectorAll('.custom-store-section').forEach(section => {
             section.style.display = 'none';
         });
@@ -1452,7 +1467,6 @@
             arrow.style.transform = 'rotate(0deg)';
         });
 
-        // إذا كان القسم المختار مخفياً، افتحه الحين واعرض منتجاته الفاخرة
         if (isCurrentlyHidden) {
             targetSection.style.display = 'block';
             const currentArrow = headerElement.querySelector('.arrow-icon');
@@ -1461,7 +1475,8 @@
             targetSection.style.display = 'none';
         }
     }
-    </script>
+</script>
+
 </div>
 </body>
 </html>
