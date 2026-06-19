@@ -415,21 +415,22 @@
     </div>
 
          <!-- استايل حاسم لإجبار الإخفاء والظهور المتبادل عبر الكلاس الموحد -->
-    <style>
-        .custom-store-section.hidden-section { display: none !important; }
-        .custom-store-section.show-section { display: block !important; }
-        
-        @media (max-width: 768px) {
-            .desktop-only-filter { display: none !important; }
-            .mobile-only-filter { display: block !important; }
-            .custom-store-section { display: block !important; margin-bottom: 40px !important; }
-        }
-        @media (min-width: 769px) {
-            .mobile-only-filter { display: none !important; }
-            .desktop-only-filter { display: block !important; }
-            .custom-store-section { display: none; }
-        }
-    </style>
+   <style>
+    .custom-store-section.hidden-section { display: none !important; }
+    .custom-store-section.show-section { display: block !important; }
+    
+    @media (max-width: 768px) {
+        .desktop-only-filter { display: none !important; }
+        .mobile-only-filter { display: block !important; }
+        /* تم إزالة display: block !important لتعمل التصفية بنجاح */
+        .custom-store-section { margin-bottom: 40px !important; }
+    }
+    @media (min-width: 769px) {
+        .mobile-only-filter { display: none !important; }
+        .desktop-only-filter { display: block !important; }
+        .custom-store-section { display: none; }
+    }
+</style>
 
     <!-- ================= نهاية نظام تصفية المتجر الذكي المطور الشامل ================= -->
 <!-- ================= بداية قسم البوابات الرئيسية للقصور والفلل والمنازل المصحح والمحرر بالكامل ================= -->
